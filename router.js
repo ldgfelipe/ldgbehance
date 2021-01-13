@@ -1,8 +1,8 @@
 const router = new VueRouter({
     routes:[
         {
-            path:"/",
-            component:httpVueLoader("pages/ini.vue")
+            path: "/",
+            component: httpVueLoader(httpVueLoader("pages/ini.vue")
         }
     ]
 })
