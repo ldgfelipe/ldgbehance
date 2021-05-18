@@ -73,7 +73,7 @@ CARRERA RENDÓN</h2>
             <v-col cols="12" md="6" class="secondary--text">
             <div class="secondary primary--text text-center" style="border-radius:0px 10px 10px 0px;"><h2>ACERCA DE MI</h2></div>
 
-            <p style="text-align:justify" class="pa-1">  Soy licenciado en Diseño Gráfico, con especialidad en diseño y programación web, tengo experiencia con mas de 6 años trabajando con diferentes lenguajes y herramientas de desarrollo según lo a requerido mis actividades en el trabajo. Soy una persona comprometida, autodidacta y comprometida con el empuje de superarme todos los días mejorando y actualizando mis habilidades.</p>
+            <p style="text-align:justify" class="pa-1">  Soy licenciado en Diseño Gráfico, con especialidad en diseño y programación web, tengo experiencia con mas de 6 años trabajando con diferentes lenguajes y herramientas de desarrollo según lo a requerido mis actividades en el trabajo. Soy una persona dedicada, autodidacta y comprometida con superarme todos los días mejorando y actualizando mis habilidades.</p>
             </v-col>
               <v-col cols="12" md="6"  class="secondary--text">
 
