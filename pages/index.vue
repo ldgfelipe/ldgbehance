@@ -28,7 +28,7 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-email</v-icon> <a href="mailto:ldgfelipecarrera@gmail.com">ldgfelipecarrera@gmail.com</a>
             </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Tu mensaje&phone=+522227328662&abid=+522227328662" target="_blank">2227328662</a>
+         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Vi tu CV y estoy interesado en tus servicios&phone=+522227328662&abid=+522227328662" target="_blank">2227328662</a>
         </v-col>
         <v-col cols="12" md="6" class="pa-3">
          <v-icon>mdi-home</v-icon> PUEBLA,MÉXICO
