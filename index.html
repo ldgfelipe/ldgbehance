@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+LDGFELIPE BEHANCE
+        </title>
+        <link rel="icon" type="image/jpg" href="img/favicon.jpg">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="./css/vuetifyjs.css" rel="stylesheet">
+        <link href="./css/animate.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Days+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="./css/style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166806236-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-166806236-1');
+    </script>
+    
+        </head>
+        <body class="is-preload">
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v7.0'
+        });
+      };
+    
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution=setup_tool
+      page_id="422373184456426"
+    logged_in_greeting="Hola, como puedo ayudarte?"
+    logged_out_greeting="Hola, como puedo ayudarte?">
+    </div>
+
+        <div id="app">
+            <v-app>
+                <cabecera></cabecera>
+                <router-view></router-view>
+                <piedepagina></piedepagina>
+            </v-app>
+        </div>
+    </body>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vuex.js"></script>
+    <script src="./js/vue-router.js"></script>
+    <script src="./js/vuetifyjs.js"></script>
+    <script src="./js/httpVueLoader.js"></script>
+    <script src="./init.js"></script>
+</html>
