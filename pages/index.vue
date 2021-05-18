@@ -402,6 +402,14 @@ JEFE DE DISEÑO Y SISTEMAS
             APK Obsoletos
 
         </v-col>
+
+<v-col cols="12" md="2" class="secondary--text">
+
+            <a href="./download/appschools.apk"><img src="./img/icon/vuejs.png" width="100%"  /></a>
+            APK   appschools
+
+        </v-col>
+      
     </v-row>
 
 
