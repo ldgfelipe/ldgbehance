@@ -13,7 +13,7 @@ CARRERA RENDÓN</h2>
              <a href="https://facebook.com/Ldgfelipe" target="_blanck" class="secondary--text"><img src="./img/icon/fb.png" style="width:60px; height:60px; position:relative;" /> </a>
          </v-col>
          <v-col cols="4" class="left-text">
-              <a href="https://twitter.com/ldgfelipecarrera" target="_blanck" class="secondary--text"><img src="./img/icon/tw.png" style="width:60px; height:60px; position:relative;" /> </a>
+              <a href="https://twitter.com/ldgframe" target="_blanck" class="secondary--text"><img src="./img/icon/tw.png" style="width:60px; height:60px; position:relative;" /> </a>
          </v-col>
 
             <v-col cols="4" class="left-text">
