@@ -28,27 +28,44 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-email</v-icon> <a href="mailto:ldgfelipecarrera@gmail.com">ldgfelipecarrera@gmail.com</a>
             </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Tu mensaje&phone=+522227328662&abid=+522227328662">2227328662</a>
+         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Tu mensaje&phone=+522227328662&abid=+522227328662" target="_blank">2227328662</a>
         </v-col>
         <v-col cols="12" md="6" class="pa-3">
          <v-icon>mdi-home</v-icon> PUEBLA,MÉXICO
         </v-col>
 
             <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-web</v-icon> <a href="https://ldgfelipe.github.io/behance/">https://ldgfelipe.github.io/behance/</a>
+         <v-icon>mdi-web</v-icon> <a href="https://codigofacilito.com/usuarios/ldgfelipecarrera/" target="_blank">codigofacilito.com</a>
+        </v-col>
+              <v-col cols="12" md="6" class="pa-3">
+         <v-icon>mdi-file-document-outline</v-icon>  <a href="./download/CV LDGFELIPECARRERARENDOND 2021.pdf"  >Descargar CV</a>
+        </v-col>
+
+            <v-col cols="12" md="6" class="pa-3">
+         <v-icon>mdi-linkedin</v-icon>  <a href="https://www.linkedin.com/in/ldgfelipecarrera" target="_blank" >linkedin.com</a>
+        </v-col>
+
+
+
+                    
+
+
+             <v-col cols="12" md="6" class="pa-3">
+         <v-icon>mdi-card-account-details-outline</v-icon>  CEDULA PROFESIONAL 6188950
         </v-col>
 
         </v-row>
         </div>
 
 
-
+ 
 
                 </v-col>
                 <v-col cols="12" md="4">
 
                       <transition name="slide-fade">
                              <p v-if="show"><v-img src="./img/mifoto.png"   class="img-responsive" /></p>
+                           
                         </transition>
                  
                 </v-col>
@@ -272,6 +289,18 @@ JEFE DE DISEÑO Y SISTEMAS
     </v-progress-circular>
 </v-col>
 
+
+<v-col cols="12" md="4" class="text-center">
+<v-progress-circular
+      :rotate="90"
+      :size="110"
+      :width="15"
+      :value="50"
+      color="primary"
+    >
+        <h6>GO</h6>
+    </v-progress-circular>
+</v-col>
       </v-row>
 
               </v-col>
@@ -280,9 +309,43 @@ JEFE DE DISEÑO Y SISTEMAS
    <v-col cols="12" md="12">
        
        </v-col>           
+<v-col cols="12" md="12">
+       <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>CERTIFICADOS</h2></div>
+
+<v-row>
+ <v-col
+      v-for="n in 4"
+      :key="n"
+      class="d-flex child-flex"
+      cols="12" md="6"
+    >
+      <v-img
+        :src="`./img/certificado/certificados${n}.jpg`"
+        :lazy-src="`./img/certificado/certificados${n}.jpg`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </v-col>
+
+</v-row>
 
 
-  <v-col cols="12" md="10">
+</v-col>
+
+  <v-col cols="12" md="12">
        <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Sitios Desarrollados</h2></div>
     <v-data-table :headers="cabsitio" :items="sitiosar"   hide-default-footer  disable-pagination>
         <template v-slot:item.visitar='{ item }'>
@@ -291,8 +354,58 @@ JEFE DE DISEÑO Y SISTEMAS
     </v-data-table>
 
        </v-col>           
+    <v-col cols="12" md="12">
+        <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
+        <h2>Galería Diseños Realizados</h2>
+        </div>
+             <v-row>
+                 
+    <v-col
+      v-for="n in 12"
+      :key="n"
+      class="d-flex child-flex"
+      cols="4"
+    >
+      <v-img
+        :src="`./img/galeria/img${n}.jpg`"
+        :lazy-src="`./img/galeria/img${n}.jpg`"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+    </v-col>
+  </v-row>
 
 
+        </v-col>
+    <v-col cols="12" >
+         <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
+        <h2>Aplicaciones Desarrolladas</h2>
+        </div>
+
+    <v-row>
+        <v-col cols="12" md="2" class="secondary--text">
+
+            <a href="./download/obsoletos.apk"><img src="./img/icon/obsoletos.png" width="100%"  /></a>
+            APK Obsoletos
+
+        </v-col>
+    </v-row>
+
+
+    </v-col>
             </v-row>
         </v-container>
     
