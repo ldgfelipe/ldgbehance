@@ -110,20 +110,30 @@ Técnico en Sistemas Computacionales
 DISEÑO GRÁFICO PROGRAMACIÓN WEB
 EDICIÓN DE FOTOGRAFÍA, EDICIÓN DE IMÁGENES, SOPORTE A SITIOS WEB
 
-<h3>JB EMPRESARIAL</h3>
+<h3>JB EMPRESARIAL</h3> 
+ (Asistencia y reparación de siniestros)
 <h4>MAR 2020 - MAR 2020</h4>
 DISEÑADOR FRONT END CON VUEJS
 
+<h3>CODIGO 46</h3> 
+(Venta de franquicias de análisis genético)
+<h4>ENE 2020 a MAR 2020</h4>
+DISEÑO Y PROGRAMACIÓN DE SISTEMA DE VENTAS  VUEJS y PHP
+
+
 <h3>VALVULAS ROS</h3>
+(Venta de Válvulas y conexiones)
 <h4>OCT 2018 - OCT 2019</h4>
 PROGRAMADOR WEB VUEJS 
 
 <h3>GRUPO COMERCIAL PANASA</h3>
+ (Venta de autopartes)
 <h4>ENE-2014 ENE-2018</h4>
 DISEÑO Y PROGRAMACIÓN WEB 
  CON PHP, MYSQL, JQUERY
 
 <h3>AGUA INMACULADA </h3>
+ (Venta de Franquicias Purificadoras)
 <h4>ENE-2008-ENE-2014</h4>
 JEFE DE DISEÑO Y SISTEMAS
 
