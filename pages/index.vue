@@ -351,11 +351,57 @@ titulo="GO"
 
   <v-col cols="12" md="12">
        <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Sitios Desarrollados</h2></div>
-    <v-data-table :headers="cabsitio" :items="sitiosar"   hide-default-footer  disable-pagination>
+
+
+
+    <v-row>
+        <v-col v-for="(key, index) in sitiosar" cols="12" md="4" class="pa-12" :key="index+'l'">
+                <div class="secondary  pa-3  primary--text " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
+                    
+       
+
+                        <v-img
+        :src="'img/paginas/'+key.sitio+'.png'"
+        :lazy-src="'img/paginas/'+key.sitio+'.png'"
+        aspect-ratio="1"
+        class="grey lighten-2"
+      >
+        <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-5"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
+
+
+
+                
+                {{key.sitio}}<br />
+                <a :href="key.enlace" target="_blank">{{key.enlace}}</a>
+                </div>
+        </v-col>
+
+    </v-row>
+
+
+
+
+   <!--<v-data-table :headers="cabsitio" :items="sitiosar"   hide-default-footer  disable-pagination>
         <template v-slot:item.visitar='{ item }'>
             <a :href="item.enlace" target="_blank">Visitar</a>
             </template>
-    </v-data-table>
+    </v-data-table>-->
+
+
+
+
 
        </v-col>           
     <v-col cols="12" md="12">
@@ -524,7 +570,7 @@ module.exports = {
           leng: "wordpress",
         },
         {
-          sitio: "ortopedistapuebla.ml",
+          sitio: "ortopedistapuebla",
           enlace: "http://ortopedistapuebla.ml/",
           leng: "wordpress",
         },
