@@ -38,7 +38,7 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-web</v-icon> <a href="https://codigofacilito.com/usuarios/ldgfelipecarrera/" target="_blank">codigofacilito.com</a>
         </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-file-document-outline</v-icon>  <a href="./download/CV LDGFELIPECARRERARENDOND 2021.pdf"  >Descargar CV</a>
+         <v-icon>mdi-file-document-outline</v-icon>  <a href="./download/CV LDGFELIPECARRERARENDOND 2021.pdf"  target="_blank" >Descargar CV</a>
         </v-col>
 
             <v-col cols="12" md="6" class="pa-3">
