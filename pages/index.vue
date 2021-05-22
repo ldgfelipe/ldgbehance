@@ -356,7 +356,7 @@ titulo="GO"
 
     <v-row>
         <v-col v-for="(key, index) in sitiosar" cols="12" md="4" class="pa-12" :key="index+'l'">
-                <div class="secondary  pa-3  primary--text " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
+                <div class="secondary  pa-3  primary--text text-center " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
                     
        
 
