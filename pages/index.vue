@@ -400,14 +400,14 @@ titulo="GO"
         </div>
 
     <v-row>
-        <v-col cols="12" md="2" class="secondary--text">
+        <v-col cols="12" md="2" class="secondary--text pa-10">
 
             <a href="./download/obsoletos.apk"><img src="./img/icon/obsoletos.png" width="100%"  /></a>
             APK Obsoletos
 
         </v-col>
 
-<v-col cols="12" md="2" class="secondary--text">
+<v-col cols="12" md="2" class="secondary--text pa-10">
 
             <a href="./download/appschools.apk"><img src="./img/icon/vuejs.png" width="100%"  /></a>
             APK   appschools
