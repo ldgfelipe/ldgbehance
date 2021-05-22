@@ -7,6 +7,7 @@
         :color="color"
         :value="value"
         striped
+        v-scroll="scrollposition"
     >
         
     </v-progress-linear>
@@ -24,13 +25,23 @@ module.exports={
        value:0,
        showtitulo:false,
        timerand:[1000,500,600,1700],
-       velselect:1000
+       velselect:1000,
+       initEvent:false
        }
    },
    mounted(){
        this.loadMounted()
    },
    methods:{
+        scrollposition(evt,el){
+       let elpos=el.getBoundingClientRect().top
+       let scrollPos=window.scrollY
+            if(elpos>=scrollPos){
+                this.initEvent=true
+            }else{
+                this.initEvent=false
+            }
+       },
        loadMounted(){
          setTimeout(()=>{
      this.velselect=Math.floor(Math.random()*3)
@@ -41,6 +52,13 @@ module.exports={
                    this.showtitulo=true
                }
            },this.timerand[this.velselect])
+       }
+   },
+   watch:{
+       initEvent(){
+           if(this.initEvent===true){   
+               this.loadMounted()
+           }
        }
    },
    props:{

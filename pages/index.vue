@@ -179,7 +179,7 @@ JEFE DE DISEÑO Y SISTEMAS
 
 
           
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 <progresscircular 
 :valor="90"
 titulo="PHP"    
@@ -189,7 +189,7 @@ titulo="PHP"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 <progresscircular 
 :valor="85"
@@ -201,7 +201,7 @@ titulo="JAVASCRIPT"
 
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
     <progresscircular 
@@ -212,7 +212,7 @@ titulo="HTML"
 
 </v-col>
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
     <progresscircular 
@@ -223,7 +223,7 @@ titulo="MYSQL"
 
 </v-col>
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
 
@@ -235,7 +235,7 @@ titulo="CSS"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
 
@@ -248,7 +248,7 @@ titulo="VUEJS"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
   <progresscircular 
@@ -260,7 +260,7 @@ titulo="REACTJS"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
   <progresscircular 
@@ -272,7 +272,7 @@ titulo="MONGODB"
 
 </v-col>
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
   <progresscircular 
@@ -284,7 +284,7 @@ titulo="FIREBASE"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
  <progresscircular 
 :valor="70"
@@ -295,7 +295,7 @@ titulo="AWS"
 </v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
+<v-col cols="12" md="6" class="text-center">
 
 
  <progresscircular 

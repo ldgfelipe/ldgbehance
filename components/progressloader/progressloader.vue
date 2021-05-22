@@ -1,24 +1,16 @@
 <template>
-    
-
-
     <v-progress-circular
         :rotate="rotate"
         :size="size"
         :width="width"
         :color="color"
         :value="value"
+        v-scroll="scrollposition"
     >
         <h6 v-if="showtitulo===true"> {{titulo}}</h6>
     </v-progress-circular>
-
-
 </template>
-<style scoped>
-
-</style>
 <script>
-
 module.exports={
    data(){
        return {
@@ -26,13 +18,21 @@ module.exports={
        value:0,
        showtitulo:false,
        timerand:[1000,500,600,1700],
-       velselect:1000
+       velselect:1000,
+       initEvent:false
        }
    },
-   mounted(){
-       this.loadMounted()
-   },
+
    methods:{
+       scrollposition(evt,el){
+       let elpos=el.getBoundingClientRect().top
+       let scrollPos=window.scrollY
+            if(elpos>=scrollPos){
+                this.initEvent=true
+            }else{
+                this.initEvent=false
+            }
+       },
        loadMounted(){
          setTimeout(()=>{
      this.velselect=Math.floor(Math.random()*3)
@@ -43,6 +43,13 @@ module.exports={
                    this.showtitulo=true
                }
            },this.timerand[this.velselect])
+       }
+   },
+   watch:{
+       initEvent(){
+           if(this.initEvent===true){   
+               this.loadMounted()
+           }
        }
    },
    props:{
@@ -59,11 +66,11 @@ module.exports={
    },
    size:{
        type:Number,
-       default:()=>{return 110}
+       default:()=>{return 140}
    },
    width:{
        type:Number,
-       default:()=>{return 15}
+       default:()=>{return 22}
    },
    color:"primary"
    }
