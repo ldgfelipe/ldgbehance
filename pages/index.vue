@@ -383,8 +383,10 @@ titulo="GO"
 
 
                 
-                {{key.sitio}}<br />
-                <a :href="key.enlace" target="_blank">{{key.enlace}}</a>
+                <b>{{key.sitio}}</b><br />
+             
+                {{key.leng}}  <br />
+                 <a :href="key.enlace" style target="_blank">Visitar Sitio</a>
                 </div>
         </v-col>
 
