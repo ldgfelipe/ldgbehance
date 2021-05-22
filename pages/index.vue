@@ -141,28 +141,32 @@ JEFE DE DISEÑO Y SISTEMAS
 
 
 <div class="secondary primary--text text-left pa-6" style="border-radius:15px; ">
-
+<v-row>
+    <v-col cols="12" >
 <h2>Lenguage</h2>
+</v-col>
+    <v-col cols="12" >
 
-    <h4>Inglés</h4>
+<progresslinear
 
-<v-progress-linear
-      color="primary"
-      height="10"
-      value="60"
-      striped
-    ></v-progress-linear>
+      :height="10"
+      :valor="60"
+      titulo="Inglés"
 
-    <h4>Español</h4>
+   />
 
-<v-progress-linear
-      color="primary"
-      height="10"
-      value="100"
-      striped
-    ></v-progress-linear>
-<br /><br />
+</v-col>
+    <v-col cols="12" >
+<progresslinear
 
+      :height="10"
+      :valor="100"
+      titulo="Español"
+
+   />
+    </v-col>
+
+</v-row>
     </div>
 
               </v-col>
@@ -172,144 +176,134 @@ JEFE DE DISEÑO Y SISTEMAS
       <h2>Skills</h2>
 
       <v-row>
+
+
+          
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="90"
-      color="primary"
-    >
-       <h6> PHP</h6>
-    </v-progress-circular>
+<progresscircular 
+:valor="90"
+titulo="PHP"    
+    />
+
+
 </v-col>
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="85"
-      color="primary"
-    >
-        <h6>JAVASCRIPT</h6>
-    </v-progress-circular>
+
+<progresscircular 
+:valor="85"
+titulo="JAVASCRIPT"    
+    />
+
+
 </v-col>
 
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="100"
-      color="primary"
-    >
-        <h6>HTML</h6>
-    </v-progress-circular>
+
+
+    <progresscircular 
+:valor="100"
+titulo="HTML"    
+    />
+
+
 </v-col>
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="75"
-      color="primary"
-    >
-        <h6>MYSQL</h6>
-    </v-progress-circular>
+
+
+    <progresscircular 
+:valor="75"
+titulo="MYSQL"    
+    />
+
+
 </v-col>
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="75"
-      color="primary"
-    >
-        <h6>CSS</h6>
-    </v-progress-circular>
+
+
+
+    <progresscircular 
+:valor="75"
+titulo="CSS"    
+    />
+    
 </v-col>
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="360"
-      :size="110"
-      :width="15"
-      :value="90"
-      color="primary"
-    >
-        <h6>VUEJS</h6>
-    </v-progress-circular>
+
+
+
+        <progresscircular 
+:valor="90"
+titulo="VUEJS"    
+    />
+
+
 </v-col>
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="90"
-      :size="110"
-      :width="15"
-      :value="50"
-      color="primary"
-    >
-        <h6>REACTJS</h6>
-    </v-progress-circular>
+
+
+  <progresscircular 
+:valor="50"
+titulo="REACTJS"    
+    />
+
+    
 </v-col>
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="90"
-      :size="110"
-      :width="15"
-      :value="50"
-      color="primary"
-    >
-        <h6>MONGODB</h6>
-    </v-progress-circular>
+
+
+  <progresscircular 
+:valor="50"
+titulo="MONGODB"    
+    />
+
+
+
 </v-col>
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="90"
-      :size="110"
-      :width="15"
-      :value="70"
-      color="primary"
-    >
-        <h6>FIREBASE</h6>
-    </v-progress-circular>
-</v-col>
 
 
-<v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="90"
-      :size="110"
-      :width="15"
-      :value="70"
-      color="primary"
-    >
-        <h6>AWS</h6>
-    </v-progress-circular>
+  <progresscircular 
+:valor="50"
+titulo="FIREBASE"    
+    />
+
+
 </v-col>
 
 
 <v-col cols="12" md="4" class="text-center">
-<v-progress-circular
-      :rotate="90"
-      :size="110"
-      :width="15"
-      :value="50"
-      color="primary"
-    >
-        <h6>GO</h6>
-    </v-progress-circular>
+
+ <progresscircular 
+:valor="70"
+titulo="AWS"    
+    />
+
+
+</v-col>
+
+
+<v-col cols="12" md="4" class="text-center">
+
+
+ <progresscircular 
+:valor="50"
+titulo="GO"    
+    />
+
+
 </v-col>
       </v-row>
 
@@ -430,20 +424,21 @@ JEFE DE DISEÑO Y SISTEMAS
     </v-main>
 </template>
 <style scoped>
-
-h1, h2, h3 {
-   font-family: 'Archivo Black', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Archivo Black", sans-serif;
 }
 a {
-    font-size: 18px;
+  font-size: 18px;
 }
 /* Las animaciones de entrada y salida pueden usar */
 /* funciones de espera y duración diferentes.      */
 .slide-fade-enter-active {
-  transition: all .8s ease;
+  transition: all 0.8s ease;
 }
 .slide-fade-leave-active {
-  transition: all .25s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.25s cubic-bezier(1, 0.5, 0.8, 1);
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
@@ -453,99 +448,113 @@ a {
 </style>
 </style>
 <script>
-module.exports={
-    data(){
-        return {
-            show:false,
-            cabsitio:[
-                {
-                    text:"Sitio",
-                    value:"sitio",
-                    
-                },
-                {
-                    text:"Url",
-                    value:"enlace"
-                },
-                {
-                    text:"Desarrolllo",
-                    value:"leng"
-                },
-                {
-                    text:"Visitar",
-                    value:"visitar"
-                }
-            ],
-            sitiosar:[
-                 {
-                    sitio:"Planeta preescolar",
-                    enlace:"https://planetapreescolar.com",  
-                    leng:"VUEJS"     
-                },    
-                    {
-                    sitio:"Auto Seguros LDG",
-                    enlace:"https://autosegurosldg.web.app/",  
-                    leng:"VUEJS"     
-                }, 
-                
-                 {
-                    sitio:"Vanderbilt",
-                    enlace:"https://vanderbilt.edu.mx",  
-                    leng:"wordpress"     
-                },   
-                 {
-                    sitio:"Vanderbilt Comunidad",
-                    enlace:"https://vanderbilt.edu.mx/comunidad",  
-                    leng:"VUEJS y Codeigniter"     
-                },   
-                {
-                    sitio:"Obsoletos",
-                    enlace:"https://obsoletos.com.mx",  
-                    leng:"PHP y VUEJS"     
-                },
-                 {
-                    sitio:"mind-publicidad",
-                    enlace:"http://mind-publicidad.com/"  ,  
-                    leng:"wordpress y VUEJS"   
-                },
-                {
-                    sitio:"algiocontrol",
-                    enlace:"http://algiocontrol.ml/",  
-                    leng:"wordpress"   
-                },
-                {
-                    sitio:"barbershopmasterclass",
-                    enlace:"http://barbershopmasterclass.ml/",  
-                    leng:"wordpress"     
-                },
-                {
-                    sitio:"mejorproducto",
-                    enlace:"http://mejorproducto.ml/" ,  
-                    leng:"wordpress"    
-                },
-                 {
-                    sitio:"neurociencia",
-                    enlace:"http://neurociencia.ml/"  ,  
-                    leng:"wordpress"   
-                },
-                {
-                    sitio:"ortopedistapuebla.ml",
-                    enlace:"http://ortopedistapuebla.ml/" ,  
-                    leng:"wordpress"    
-                },
-                {
-                    sitio:"tienda colegiodiscovery",
-                    enlace:"https://colegiodiscovery.edu.mx/tienda/",  
-                    leng:"wordpress"     
-                }
-               
-            ]
-        }
-    },
-    mounted(){
-        setTimeout(()=>{
-            this.show=true
-        },1500)
-    }
-}
+
+module.exports = {
+  data() {
+    return {
+      show: false,
+      cabsitio: [
+        {
+          text: "Sitio",
+          value: "sitio",
+        },
+        {
+          text: "Url",
+          value: "enlace",
+        },
+        {
+          text: "Desarrolllo",
+          value: "leng",
+        },
+        {
+          text: "Visitar",
+          value: "visitar",
+        },
+      ],
+      sitiosar: [
+        {
+          sitio: "Planeta preescolar",
+          enlace: "https://planetapreescolar.com",
+          leng: "VUEJS",
+        },
+        {
+          sitio: "Auto Seguros LDG",
+          enlace: "https://autosegurosldg.web.app/",
+          leng: "VUEJS",
+        },
+
+        {
+          sitio: "Vanderbilt",
+          enlace: "https://vanderbilt.edu.mx",
+          leng: "wordpress",
+        },
+        {
+          sitio: "Vanderbilt Comunidad",
+          enlace: "https://vanderbilt.edu.mx/comunidad",
+          leng: "VUEJS y Codeigniter",
+        },
+        {
+          sitio: "Obsoletos",
+          enlace: "https://obsoletos.com.mx",
+          leng: "PHP y VUEJS",
+        },
+        {
+          sitio: "mind-publicidad",
+          enlace: "http://mind-publicidad.com/",
+          leng: "wordpress y VUEJS",
+        },
+        {
+          sitio: "algiocontrol",
+          enlace: "http://algiocontrol.ml/",
+          leng: "wordpress",
+        },
+        {
+          sitio: "barbershopmasterclass",
+          enlace: "http://barbershopmasterclass.ml/",
+          leng: "wordpress",
+        },
+        {
+          sitio: "mejorproducto",
+          enlace: "http://mejorproducto.ml/",
+          leng: "wordpress",
+        },
+        {
+          sitio: "neurociencia",
+          enlace: "http://neurociencia.ml/",
+          leng: "wordpress",
+        },
+        {
+          sitio: "ortopedistapuebla.ml",
+          enlace: "http://ortopedistapuebla.ml/",
+          leng: "wordpress",
+        },
+        {
+          sitio: "tienda colegiodiscovery",
+          enlace: "https://colegiodiscovery.edu.mx/tienda/",
+          leng: "wordpress",
+        },
+      ],
+    };
+  },
+  methods:{
+      scrollMethod(){
+
+      }
+  },
+  components: {
+    progresscircular: httpVueLoader(
+      "../components/progressloader/progressloader.vue"
+ 
+    ),
+         progresslinear: httpVueLoader(
+      "../components/progresslinear/progresslinear.vue"
+         )
+  },
+  mounted() {
+    setTimeout(() => {
+      this.show = true;
+    }, 1500);
+  },
+ 
+};
 </script>
