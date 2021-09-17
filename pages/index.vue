@@ -313,10 +313,48 @@ titulo="GO"
    <v-col cols="12" md="12">
        
        </v-col>           
-<v-col cols="12" md="12">
-       <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>CERTIFICADOS</h2></div>
 
-<v-row>
+
+  <v-col cols="12" md="12">
+       <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Sitios Desarrollados</h2></div>
+
+
+
+   
+
+
+
+
+   <!--<v-data-table :headers="cabsitio" :items="sitiosar"   hide-default-footer  disable-pagination>
+        <template v-slot:item.visitar='{ item }'>
+            <a :href="item.enlace" target="_blank">Visitar</a>
+            </template>
+    </v-data-table>-->
+
+
+
+
+
+       </v-col>           
+    <v-col cols="12" md="12">
+        <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
+        <h2>Galería Diseños Realizados</h2>
+        </div>
+<v-tabs>
+  <v-tab>
+  Certificados
+  </v-tab>
+<v-tab>
+  Sitios Web
+</v-tab>
+<v-tab>
+Publicaciones
+</v-tab>
+<v-tab>
+Vídeo
+</v-tab>
+<v-tab-item>
+  <v-row>
  <v-col
       v-for="n in 4"
       :key="n"
@@ -345,16 +383,9 @@ titulo="GO"
     </v-col>
 
 </v-row>
-
-
-</v-col>
-
-  <v-col cols="12" md="12">
-       <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Sitios Desarrollados</h2></div>
-
-
-
-    <v-row>
+</v-tab-item>
+<v-tab-item>
+   <v-row>
         <v-col v-for="(key, index) in sitiosar" cols="12" md="4" class="pa-12" :key="index+'l'">
                 <div class="secondary  pa-3  primary--text text-center " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
                     
@@ -391,32 +422,7 @@ titulo="GO"
         </v-col>
 
     </v-row>
-
-
-
-
-   <!--<v-data-table :headers="cabsitio" :items="sitiosar"   hide-default-footer  disable-pagination>
-        <template v-slot:item.visitar='{ item }'>
-            <a :href="item.enlace" target="_blank">Visitar</a>
-            </template>
-    </v-data-table>-->
-
-
-
-
-
-       </v-col>           
-    <v-col cols="12" md="12">
-        <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
-        <h2>Galería Diseños Realizados</h2>
-        </div>
-<v-tabs>
-<v-tab>
-Imagen
-</v-tab>
-<v-tab>
-Vídeo
-</v-tab>
+</v-tab-item>
 <v-tab-item>
   
 <v-row>
@@ -425,7 +431,9 @@ Vídeo
       v-for="n in 12"
       :key="n"
       class="d-flex child-flex"
-      cols="4"
+      cols="12"
+      md="4"
+
     >
       <v-img
         :src="`./img/galeria/img${n}.jpg`"
@@ -473,6 +481,16 @@ Vídeo
   cols="12"
   md="4">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/FWx6j0ogHB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </v-col>
+
+  <v-col 
+  cols="12"
+  md="4"
+  >
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dXrFOOmnsEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
   </v-col>
 
   </v-row>
