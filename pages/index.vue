@@ -353,6 +353,9 @@ Publicaciones
 <v-tab>
 Vídeo
 </v-tab>
+<v-tab>
+Apps
+</v-tab>
 <v-tab-item>
   <v-row>
  <v-col
@@ -387,7 +390,7 @@ Vídeo
 <v-tab-item>
    <v-row>
         <v-col v-for="(key, index) in sitiosar" cols="12" md="4" class="pa-12" :key="index+'l'">
-                <div class="secondary  pa-3  primary--text text-center " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
+                <div class="primary  pa-3  primary--text text-center " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
                     
        
 
@@ -495,21 +498,8 @@ Vídeo
 
   </v-row>
 </v-tab-item>
-</v-tabs>
-
-
-
-
-
-
-
-        </v-col>
-    <v-col cols="12" >
-         <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
-        <h2>Aplicaciones Desarrolladas</h2>
-        </div>
-
-    <v-row>
+<v-tab-item>
+   <v-row>
         <v-col cols="12" md="2" class="secondary--text pa-10">
 
             <a href="./download/obsoletos.apk"><img src="./img/icon/obsoletos.png" width="100%"  /></a>
@@ -525,9 +515,17 @@ Vídeo
         </v-col>
       
     </v-row>
+</v-tab-item>
+</v-tabs>
 
 
-    </v-col>
+
+
+
+
+
+        </v-col>
+ 
             </v-row>
         </v-container>
     
