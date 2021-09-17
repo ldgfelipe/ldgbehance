@@ -412,7 +412,10 @@ titulo="GO"
         </div>
 <v-tabs>
 <v-tab>
-Publicaciones Kumon
+Imagen
+</v-tab>
+<v-tab>
+Vídeo
 </v-tab>
 <v-tab-item>
   
@@ -446,7 +449,20 @@ Publicaciones Kumon
     </v-col>
   </v-row>
 </v-tab-item>
+<v-tab-item>
+  <v-row>
+                 
+    <v-col
+      class="d-flex child-flex"
+      cols="12"
+      md="4"
+    >
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/1AzbzaRY4F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </v-col>
+  </v-row>
+</v-tab-item>
 </v-tabs>
 
 
