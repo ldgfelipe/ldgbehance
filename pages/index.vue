@@ -420,7 +420,7 @@ Apps
                 <b>{{key.sitio}}</b><br />
              
                 {{key.leng}}  <br />
-                 <a :href="key.enlace" style target="_blank">Visitar Sitio</a>
+                 <a :href="key.enlace" style target="_blank" class="white--text">Visitar Sitio</a>
                 </div>
         </v-col>
 
