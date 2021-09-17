@@ -410,7 +410,13 @@ titulo="GO"
         <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
         <h2>Galería Diseños Realizados</h2>
         </div>
-             <v-row>
+<v-tabs>
+<v-tab>
+Publicaciones Kumon
+</v-tab>
+<v-tab-item>
+  
+<v-row>
                  
     <v-col
       v-for="n in 12"
@@ -439,6 +445,14 @@ titulo="GO"
       </v-img>
     </v-col>
   </v-row>
+</v-tab-item>
+
+</v-tabs>
+
+
+
+
+
 
 
         </v-col>
