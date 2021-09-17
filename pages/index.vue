@@ -461,6 +461,17 @@ Vídeo
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/1AzbzaRY4F0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </v-col>
+    <v-col
+    cols="12"
+    >
+
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/WpW8V3-Inp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    </v-col>
+  <v-col>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/FWx6j0ogHB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </v-col>
+
   </v-row>
 </v-tab-item>
 </v-tabs>
