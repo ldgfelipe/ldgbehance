@@ -389,12 +389,9 @@ Apps
 </v-tab-item>
 <v-tab-item>
    <v-row>
-        <v-col v-for="(key, index) in sitiosar" v-if="key.active===true" cols="12" md="4" class="pa-12" :key="index+'l'">
+        <v-col v-for="(key, index) in sitiosar" v-if="key.active===true"  cols="12" md="4" class="pa-12" :key="index+'l'">
                 <div class="primary  pa-3  white--text text-center " style="border-radius:10px; box-shadow:10px 10px 10px #000;" >
-                    
-       
-
-                        <v-img
+                    <v-img
         :src="'img/paginas/'+key.sitio+'.png'"
         :lazy-src="'img/paginas/'+key.sitio+'.png'"
         aspect-ratio="1"
@@ -419,7 +416,7 @@ Apps
                 
                 <b>{{key.sitio}}</b><br />
              
-               <div v-html="key.leng"><div>  <br />
+               <div v-html="key.leng"></div>  <br />
                  <a :href="key.enlace" style target="_blank" class="white--text">Visitar Sitio</a>
                 </div>
         </v-col>
