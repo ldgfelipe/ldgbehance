@@ -584,62 +584,74 @@ module.exports = {
           sitio: "Planeta preescolar",
           enlace: "https://planetapreescolar.com",
           leng: "VUEJS",
+           active:true
         },
         {
           sitio: "Auto Seguros LDG",
           enlace: "https://autosegurosldg.web.app/",
           leng: "VUEJS",
+           active:true
         },
 
         {
           sitio: "Vanderbilt",
           enlace: "https://vanderbilt.edu.mx",
           leng: "wordpress",
+           active:true
         },
         {
           sitio: "Vanderbilt Comunidad",
           enlace: "https://vanderbilt.edu.mx/comunidad",
           leng: "VUEJS y Codeigniter",
+           active:true
         },
         {
           sitio: "Obsoletos",
           enlace: "https://obsoletos.com.mx",
           leng: "PHP y VUEJS",
+           active:true
         },
         {
           sitio: "mind-publicidad",
           enlace: "http://mind-publicidad.com/",
           leng: "wordpress y VUEJS",
+           active:true
         },
         {
           sitio: "algiocontrol",
           enlace: "http://algiocontrol.ml/",
           leng: "wordpress",
+           active:false
         },
         {
           sitio: "barbershopmasterclass",
           enlace: "http://barbershopmasterclass.ml/",
           leng: "wordpress",
+           active:false
         },
         {
           sitio: "mejorproducto",
           enlace: "http://mejorproducto.ml/",
           leng: "wordpress",
+           active:false
         },
         {
           sitio: "neurociencia",
           enlace: "http://neurociencia.ml/",
           leng: "wordpress",
+           active:false
         },
         {
           sitio: "ortopedistapuebla",
           enlace: "http://ortopedistapuebla.ml/",
           leng: "wordpress",
+          active:false
         },
         {
           sitio: "tienda colegiodiscovery",
           enlace: "https://colegiodiscovery.edu.mx/tienda/",
           leng: "wordpress",
+           active:true
         },
       ],
     };
