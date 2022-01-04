@@ -419,7 +419,7 @@ Apps
                 
                 <b>{{key.sitio}}</b><br />
              
-                {{key.leng}}  <br />
+               <div v-html="key.leng"><div>  <br />
                  <a :href="key.enlace" style target="_blank" class="white--text">Visitar Sitio</a>
                 </div>
         </v-col>
@@ -650,6 +650,18 @@ module.exports = {
           sitio: "tienda colegiodiscovery",
           enlace: "https://colegiodiscovery.edu.mx/tienda/",
           leng: "wordpress",
+           active:true
+        },
+        {
+          sitio: "Sistema Arministración Kumon",
+          enlace: "https://kumonsistem.web.app/",
+          leng: "vuejs firebase <i>en desarrollo</i>",
+           active:true
+        },
+        {
+          sitio: "profetit",
+          enlace: "https://profetit.ml",
+          leng: "php laravel <i>en desarrollo</i>",
            active:true
         },
       ],
