@@ -554,9 +554,8 @@ a {
   opacity: 0;
 }
 </style>
-</style>
-<script>
 
+<script>
 module.exports = {
   data() {
     return {
