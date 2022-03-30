@@ -514,13 +514,6 @@ Apps
     </v-row>
 </v-tab-item>
 </v-tabs>
-
-
-
-
-
-
-
         </v-col>
  
             </v-row>
@@ -657,7 +650,7 @@ module.exports = {
         },
         {
           sitio: "profetit",
-          enlace: "https://profetit.ml",
+          enlace: "https://profetit.org",
           leng: "php laravel <i>en desarrollo</i>",
            active:true
         },
