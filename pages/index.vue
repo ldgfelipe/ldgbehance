@@ -516,7 +516,7 @@ Apps
 
         <v-col cols="12" md="2" class="secondary--text pa-10">
 
-<a href="./download/intersom.apk"><img src="./img/icon/intersom.png" width="100%"  /></a>
+<a href="./download/intersom.apk"><img src="./img/icon/intersom.jpeg" width="100%"  /></a>
 APK   Intersom
 
 </v-col>
