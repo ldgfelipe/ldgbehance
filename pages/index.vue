@@ -3,7 +3,7 @@
         
         <v-container  class="primary white--text elevation-23" >
             <v-row> 
-                <v-col cols="12" md="8" class="text-center">
+                <v-col cols="12" md="6" class="text-center">
                     <h2>FELIPE DE JESÚS
 CARRERA RENDÓN</h2>
                     <h1>DISEÑADOR Y PROGRAMADOR WEB</h1>
@@ -61,10 +61,13 @@ CARRERA RENDÓN</h2>
  
 
                 </v-col>
-                <v-col cols="12" md="4">
+                <v-col cols="12" md="1">
+
+                </v-col>
+                <v-col cols="12" md="5">
 
                       <transition name="slide-fade">
-                             <p v-if="show"><v-img src="./img/mifoto.png"   class="img-responsive" /></p>
+                             <p v-if="show"><v-img src="./img/ldgfelipefoto.png"  style="max-width:550px; width:100%;"  class="img-responsive" /></p>
                            
                         </transition>
                  
@@ -316,7 +319,7 @@ titulo="GO"
 
 
   <v-col cols="12" md="12">
-       <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Sitios Desarrollados</h2></div>
+       <!-----<div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Trabajos</h2></div>--->
 
 
 
@@ -338,7 +341,7 @@ titulo="GO"
        </v-col>           
     <v-col cols="12" md="12">
         <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;">
-        <h2>Galería Diseños Realizados</h2>
+        <h2>Galería Trabajos Realizados</h2>
         </div>
 <v-tabs>
   <v-tab>
@@ -359,15 +362,15 @@ Apps
 <v-tab-item>
   <v-row>
  <v-col
-      v-for="n in 4"
+      v-for="n in 5"
       :key="n"
       class="d-flex child-flex"
-      cols="12" md="6"
+      cols="12" md="4"
     >
       <v-img
         :src="`./img/certificado/certificados${n}.jpg`"
         :lazy-src="`./img/certificado/certificados${n}.jpg`"
-        aspect-ratio="1"
+       
         class="grey lighten-2"
       >
         <template v-slot:placeholder>
@@ -510,6 +513,13 @@ Apps
             APK   appschools
 
         </v-col>
+
+        <v-col cols="12" md="2" class="secondary--text pa-10">
+
+<a href="./download/intersom.apk"><img src="./img/icon/intersom.png" width="100%"  /></a>
+APK   Intersom
+
+</v-col>
       
     </v-row>
 </v-tab-item>
@@ -598,13 +608,13 @@ module.exports = {
           sitio: "Obsoletos",
           enlace: "https://obsoletos.com.mx",
           leng: "PHP y VUEJS",
-           active:true
+           active:false
         },
         {
           sitio: "mind-publicidad",
           enlace: "http://mind-publicidad.com/",
           leng: "wordpress y VUEJS",
-           active:true
+           active:false
         },
         {
           sitio: "algiocontrol",
@@ -638,7 +648,7 @@ module.exports = {
         },
         {
           sitio: "tienda colegiodiscovery",
-          enlace: "https://colegiodiscovery.edu.mx/tienda/",
+          enlace: "https://colegiodiscovery.edu.mx/",
           leng: "wordpress",
            active:true
         },
@@ -656,8 +666,32 @@ module.exports = {
         },
          {
           sitio: "Torre Helea",
-          enlace: "https://torrehelea.ml",
+          enlace: "https://torrehelea.com",
           leng: "php laravel <i>en desarrollo</i>",
+           active:true
+        },
+        {
+          sitio: "pixzu",
+          enlace: "https://pixzu.com.mx",
+          leng: "wordpress",
+           active:true
+        },
+        {
+          sitio: "kaab-arte",
+          enlace: "https://kaab-arte.com",
+          leng: "wordpress",
+           active:true
+        },
+        {
+          sitio: "Distribuidora Santa Fe",
+          enlace: "https://santafedistribuidora.com",
+          leng: "wordpress",
+           active:true
+        },
+        {
+          sitio: "easythinx",
+          enlace: "https://easythinx.ga",
+          leng: "Laravel y Vuejs",
            active:true
         },
       ],
