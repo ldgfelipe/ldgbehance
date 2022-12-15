@@ -702,6 +702,12 @@ module.exports = {
           leng: "Laravel y Vuejs",
            active:true
         },
+        {
+          sitio: "facilweb",
+          enlace: "https://facilweb.com.mx",
+          leng: "wordpress",
+           active:true
+        },
       ],
     };
   },
