@@ -54,7 +54,12 @@ CARRERA RENDÓN</h2>
 
 
              <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-card-account-details-outline</v-icon>  CEDULA PROFESIONAL 6188950
+
+              
+         <v-icon>mdi-card-account-details-outline</v-icon> 
+         <a href="http://cedula.buholegal.com/6188950/" target="_blank" > CEDULA PROFESIONAL 6188950</a>
+         
+        
         </v-col>
 
         </v-row>
