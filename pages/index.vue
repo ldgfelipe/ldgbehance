@@ -370,7 +370,7 @@ Apps
 <v-tab-item>
   <v-row>
  <v-col
-      v-for="n in 5"
+      v-for="n in 12"
       :key="n"
       class="d-flex child-flex"
       cols="12" md="4"
