@@ -367,6 +367,9 @@ Vídeo
 <v-tab>
 Apps
 </v-tab>
+<v-tab>
+Diseños 3D
+</v-tab>
 <v-tab-item>
   <v-row>
  <v-col
@@ -530,6 +533,42 @@ APK   Intersom
 </v-col>
       
     </v-row>
+</v-tab-item>
+<v-tab-item>
+<v-row>
+  <v-col cols="12" md="12">
+    <a href="https://3dwarehouse.sketchup.com/user/d84c526e-abe6-4d2c-905a-6f22ea6c1d4c" class="btn btn-primary" >Perfil 3dwarehouse.sketchup.com</a>
+  </v-col>
+  <v-col cols="6" md="12">
+    <iframe src="https://3dwarehouse.sketchup.com/embed/9e4a2179-c982-42ab-8dfe-22eb1bc56d8a?token=QQ9tApBYYmM=&binaryName=s21"
+     frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  </v-col>
+
+  <v-col cols="6" md="12">
+    <iframe src="https://3dwarehouse.sketchup.com/embed/2ee86659-f571-4c8c-80d7-ec21ee1b5108?token=OgyMn75F630=&binaryName=s21"
+     frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  </v-col>
+
+  <v-col cols="6" md="12">
+    <iframe src="https://3dwarehouse.sketchup.com/embed/60735ee6-5388-45df-a0b3-0a1e18d5a9cf?token=CcJvRdk4M6s=&binaryName=s21"
+     frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  </v-col>
+
+  <v-col cols="6" md="12">
+    <iframe src="https://3dwarehouse.sketchup.com/embed/fcfdd774-002a-44d4-9689-93b3f7106be2?token=P8Rv6lCP-ZQ=&binaryName=s21"
+     frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  </v-col>
+
+  <v-col cols="6" md="12">
+    <iframe src="https://3dwarehouse.sketchup.com/embed/9e8c2cb9-7473-4fef-acd3-fc9ea940e8b3?token=ACn7-8vESEw=&binaryName=s21"
+     frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="580" height="326" allowfullscreen></iframe>
+  </v-col>
+
+  
+
+</v-row>
+
+
 </v-tab-item>
 </v-tabs>
         </v-col>
