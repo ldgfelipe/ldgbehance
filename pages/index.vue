@@ -117,6 +117,11 @@ Técnico en Sistemas Computacionales
 <div class="secondary primary--text text-center " style="border-radius:0px 10px 10px 0px;"><h2>Experiencia</h2></div>
 
     <p class="pa-1">
+      <h3>SAECSA ENERGIA SOLAR</h3>
+<h4>MAR 2022-ACTUAL</h4>
+DISEÑO GRÁFICO PROGRAMACIÓN WEB
+EDICIÓN DE FOTOGRAFÍA, EDICIÓN DE IMÁGENES, SOPORTE A SITIOS WEB
+
 
 <h3>FREELANCE</h3>
 <h4>MAR 2020-ACTUAL</h4>
