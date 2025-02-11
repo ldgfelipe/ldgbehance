@@ -9,17 +9,19 @@ CARRERA RENDÓN</h2>
                     <h1>DISEÑADOR Y PROGRAMADOR WEB</h1>
      <v-row>
      
-         <v-col cols="4" class="left-text">
+         <v-col cols="3" class="left-text">
              <a href="https://facebook.com/Ldgfelipe" target="_blanck" class="secondary--text"><img src="./img/icon/fb.png" style="width:60px; height:60px; position:relative;" /> </a>
          </v-col>
-         <v-col cols="4" class="left-text">
+         <v-col cols="3" class="left-text">
               <a href="https://twitter.com/ldgframe" target="_blanck" class="secondary--text"><img src="./img/icon/tw.png" style="width:60px; height:60px; position:relative;" /> </a>
          </v-col>
 
-            <v-col cols="4" class="left-text">
+            <v-col cols="3" class="left-text">
               <a href="https://github.com/ldgfelipe" target="_blanck" class="secondary--text"><img src="./img/icon/gh.png" style="width:60px; height:60px; position:relative;" /> </a>
          </v-col>
-            
+         <v-col cols="3" class="left-text">
+              <a href="https://www.youtube.com/@ldgbehance" target="_blanck" class="secondary--text"><img src="./img/icon/youtube.png" style="width:60px; height:60px; position:relative;" /> </a>
+         </v-col>
     </v-row>
 
     <div style="border-radius:15px; width:100%; " class="secondary primary--text text-left pa-10 ">
@@ -28,7 +30,7 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-email</v-icon> <a href="mailto:ldgfelipecarrera@gmail.com">ldgfelipecarrera@gmail.com</a>
             </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Vi tu CV y estoy interesado en tus servicios&phone=+5222218177358&abid=+5222218177358" target="_blank">221 817 7358</a>
+         <v-icon>mdi-whatsapp</v-icon> <a href="https://wa.me/15222218177358" target="_blank">221 817 7358</a>
         </v-col>
         <v-col cols="12" md="6" class="pa-3">
          <v-icon>mdi-home</v-icon> PUEBLA,MÉXICO
