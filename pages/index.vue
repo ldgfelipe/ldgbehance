@@ -651,7 +651,7 @@ module.exports = {
           sitio: "Vanderbilt Comunidad",
           enlace: "https://vanderbilt.edu.mx/comunidad",
           leng: "VUEJS y Codeigniter",
-           active:true
+           active:false
         },
         {
           sitio: "Obsoletos",
@@ -717,19 +717,19 @@ module.exports = {
           sitio: "Torre Helea",
           enlace: "https://torrehelea.com",
           leng: "php laravel <i>en desarrollo</i>",
-           active:true
+           active:false
         },
         {
           sitio: "pixzu",
           enlace: "https://pixzu.com.mx",
           leng: "wordpress",
-           active:true
+           active:false
         },
         {
           sitio: "kaab-arte",
           enlace: "https://kaab-arte.com",
           leng: "wordpress",
-           active:true
+           active:false
         },
         {
           sitio: "Distribuidora Santa Fe",
@@ -739,7 +739,7 @@ module.exports = {
         },
         {
           sitio: "easythinx",
-          enlace: "https://easythinx.ga",
+          enlace: "https://easythinx.com",
           leng: "Laravel y Vuejs",
            active:true
         },
@@ -747,7 +747,7 @@ module.exports = {
           sitio: "facilweb",
           enlace: "https://facilweb.com.mx",
           leng: "wordpress",
-           active:true
+           active:false
         },
       ],
     };
