@@ -28,7 +28,7 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-email</v-icon> <a href="mailto:ldgfelipecarrera@gmail.com">ldgfelipecarrera@gmail.com</a>
             </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Vi tu CV y estoy interesado en tus servicios&phone=+522227328662&abid=+522227328662" target="_blank">2227328662</a>
+         <v-icon>mdi-whatsapp</v-icon> <a href="whatsapp://send?text=Vi tu CV y estoy interesado en tus servicios&phone=+5222218177358&abid=+5222218177358" target="_blank">221 817 7358</a>
         </v-col>
         <v-col cols="12" md="6" class="pa-3">
          <v-icon>mdi-home</v-icon> PUEBLA,MÉXICO
@@ -41,7 +41,7 @@ CARRERA RENDÓN</h2>
          <v-icon>mdi-google</v-icon> <a href="https://g.dev/ldgfelipecarrera/" target="_blank">g.dev/ldgfelipecarrera</a>
         </v-col>
               <v-col cols="12" md="6" class="pa-3">
-         <v-icon>mdi-file-document-outline</v-icon>  <a href="./download/CV LDGFELIPECARRERARENDOND 2021.pdf"  target="_blank" >Descargar CV</a>
+         <v-icon>mdi-file-document-outline</v-icon>  <a href="./download/CV LDGFELIPECARRERARENDOND 2025.pdf"  target="_blank" >Descargar CV</a>
         </v-col>
 
             <v-col cols="12" md="6" class="pa-3">
