@@ -192,11 +192,202 @@
 
         <!-- GALERÍA (sin cambios estructurales, solo corrección de typo en target) -->
         <v-col cols="12" md="12">
-          <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
-            <h2>Galería de Trabajos Realizados</h2>
-          </div>
-          <!-- ... resto de tus tabs (sin cambios en esta entrega) ... -->
-          <!-- (Mantén todo tu bloque de <v-tabs> exactamente como está) -->
+          <v-col cols="12" md="12">
+  <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
+    <h2>Trabajos Destacados</h2>
+  </div>
+
+  <v-tabs centered show-arrows>
+    <v-tab>Certificados</v-tab>
+    <v-tab>Sitios Web</v-tab>
+    <v-tab>Diseño Gráfico</v-tab>
+    <v-tab>Vídeos</v-tab>
+    <v-tab>Apps</v-tab>
+    <v-tab>3D</v-tab>
+
+    <!-- Certificados -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="n in 12"
+          :key="'cert-'+n"
+          :src="`./img/certificado/certificados${n}.jpg`"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+        ></v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+
+    <!-- Sitios Web -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="500"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(site, index) in sitiosActivos"
+          :key="'site-'+index"
+          class="pa-4"
+        >
+          <v-card class="mx-auto" max-width="800" outlined>
+            <v-img
+              :src="'./img/paginas/' + site.sitio + '.png'"
+              height="250"
+              :alt="site.sitio"
+              @error="replaceWithErrorImage"
+            ></v-img>
+            <v-card-title class="primary--text">{{ site.sitio }}</v-card-title>
+            <v-card-text>
+              <div v-html="site.leng"></div>
+              <v-btn
+                :href="site.enlace"
+                target="_blank"
+                color="primary"
+                outlined
+                small
+                class="mt-2"
+              >
+                Visitar sitio
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+
+    <!-- Diseño Gráfico / Publicaciones -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="500"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="n in 12"
+          :key="'pub-'+n"
+          :src="`./img/galeria/img${n}.jpg`"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+        ></v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+
+    <!-- Vídeos -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(video, i) in videos"
+          :key="'vid-'+i"
+          class="d-flex align-center justify-center"
+        >
+          <iframe
+            :src="video.url"
+            width="100%"
+            height="315"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="max-width: 600px"
+          ></iframe>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+
+    <!-- Apps -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(app, i) in apps"
+          :key="'app-'+i"
+          class="d-flex flex-column align-center justify-center pa-4"
+        >
+          <a :href="app.link" target="_blank">
+            <v-img
+              :src="app.img"
+              max-width="200"
+              class="mb-4"
+              alt="App"
+            ></v-img>
+          </a>
+          <span class="text-h6 primary--text">{{ app.name }}</span>
+          <v-btn
+            :href="app.link"
+            target="_blank"
+            color="primary"
+            outlined
+            small
+            class="mt-2"
+          >
+            Descargar APK
+          </v-btn>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+
+    <!-- 3D -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(model, i) in modelos3d"
+          :key="'3d-'+i"
+          class="d-flex flex-column align-center justify-center pa-2"
+        >
+          <a
+            :href="model.profile"
+            target="_blank"
+            class="mb-4 primary--text font-weight-bold"
+          >
+            Ver en 3D Warehouse
+          </a>
+          <iframe
+            :src="model.embed"
+            frameborder="0"
+            scrolling="no"
+            width="100%"
+            height="300"
+            allowfullscreen
+            style="max-width: 600px"
+          ></iframe>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+  </v-tabs>
+</v-col>
         </v-col>
       </v-row>
     </v-container>
@@ -333,6 +524,35 @@ a:hover {
 module.exports = {
   data() {
     return {
+      videos: [
+  { url: "https://www.youtube.com/embed/1AzbzaRY4F0" },
+  { url: "https://www.youtube.com/embed/WpW8V3-Inp8" },
+  { url: "https://www.youtube.com/embed/FWx6j0ogHB4" },
+  { url: "https://www.youtube.com/embed/dXrFOOmnsEA" }
+],
+apps: [
+  { name: "Obsoletos", img: "./img/icon/obsoletos.png", link: "./download/obsoletos.apk" },
+  { name: "AppSchools", img: "./img/icon/vuejs.png", link: "./download/appschools.apk" },
+  { name: "Intersom", img: "./img/icon/intersom.jpeg", link: "./download/intersom.apk" }
+],
+modelos3d: [
+  {
+    profile: "https://3dwarehouse.sketchup.com/user/d84c526e-abe6-4d2c-905a-6f22ea6c1d4c",
+    embed: "https://3dwarehouse.sketchup.com/embed/9e4a2179-c982-42ab-8dfe-22eb1bc56d8a?token=QQ9tApBYYmM=&binaryName=s21"
+  },
+  {
+    embed: "https://3dwarehouse.sketchup.com/embed/2ee86659-f571-4c8c-80d7-ec21ee1b5108?token=OgyMn75F630=&binaryName=s21"
+  },
+  {
+    embed: "https://3dwarehouse.sketchup.com/embed/60735ee6-5388-45df-a0b3-0a1e18d5a9cf?token=CcJvRdk4M6s=&binaryName=s21"
+  },
+  {
+    embed: "https://3dwarehouse.sketchup.com/embed/fcfdd774-002a-44d4-9689-93b3f7106be2?token=P8Rv6lCP-ZQ=&binaryName=s21"
+  },
+  {
+    embed: "https://3dwarehouse.sketchup.com/embed/9e8c2cb9-7473-4fef-acd3-fc9ea940e8b3?token=ACn7-8vESEw=&binaryName=s21"
+  }
+],
       show: false,
 
       // Experiencia profesional mejor formateada
@@ -502,7 +722,15 @@ module.exports = {
       ],
     };
   },
+  computed: {
+  sitiosActivos() {
+    return this.sitiosar.filter(s => s.active === true);
+  }
+},
   methods: {
+     replaceWithErrorImage(e) {
+    e.target.src = './img/icon/vuejs.png'; // imagen fallback
+  },
     scrollMethod() {
       // Puedes usarlo más adelante si añades scroll suave
     }
