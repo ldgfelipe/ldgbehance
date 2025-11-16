@@ -6,7 +6,7 @@
         <v-col cols="12" md="6" class="text-center">
           <h2>FELIPE DE JESÚS CARRERA RENDÓN</h2>
           <h1>DISEÑADOR + DESARROLLADOR WEB</h1>
-          <p class="secondary--text mb-6 " >
+          <p class="text--secondary mb-6">
             Creo experiencias digitales con propósito: identidad de marca, sitios web funcionales y sistemas a medida.
           </p>
 
@@ -36,7 +36,9 @@
               <a href="https://www.linkedin.com/in/ldgfelipecarrera" target="_blank" class="secondary--text">
                 <img src="./img/icon/linkedin.png" style="width: 50px; height: 50px" />
               </a>
-            </v-col>
+
+             </v-col>
+            
           </v-row>
 
           <!-- Información de contacto destacada -->
@@ -53,21 +55,20 @@
                 <v-icon small>mdi-whatsapp</v-icon>
                 <a href="https://wa.me/5212218177358" target="_blank" class="primary--text">+52 221 817 7358</a>
               </v-col>
-              <v-col cols="12" md="6" class="pa-2">
+              <v-col cols="12" class="pa-2">
                 <v-icon small>mdi-map-marker</v-icon> Puebla, México
               </v-col>
-                <v-col cols="12" md="6" class="pa-2">
-              <a  href="download/CV LDG Felipe de Jesus Carrera Rendon 2025.pdf" target="_blank" class="primary--text">
-                <v-icon>mdi-file-pdf-box</v-icon>  Curriculum Vitae
+                <v-col cols="12" class="pa-2">
+              <a  href="/download/CV LDG Felipe de Jesus Carrera Rendon 2025.pdf" target="_blank" class="secondary--text">
+                <v-icon>mdi-file-pdf-box</v-icon>
               </a>
               </v-col>
               <v-col cols="12" class="pa-2 text-center">
                 <v-btn
                   color="primary"
                   dark
-                  href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto"
+                  href="mailto:ldgfelipecarrera@gmail.com?subject=Quisiera hablar sobre un proyecto"
                   class="mt-2"
-                  target="_blank"
                 >
                   <v-icon left>mdi-send</v-icon> ¿Trabajamos juntos?
                 </v-btn>
@@ -198,229 +199,202 @@
 
         <!-- GALERÍA (sin cambios estructurales, solo corrección de typo en target) -->
         <v-col cols="12" md="12">
-  
-          
+          <v-col cols="12" md="12">
+  <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
+    <h2>Trabajos Destacados</h2>
+  </div>
 
-          <v-container fluid>
-    <v-row>
-      <v-col cols="12">
-        <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
-          <h2>Trabajos Destacados</h2>
-        </div>
+  <v-tabs centered show-arrows>
+    <v-tab>Certificados</v-tab>
+    <v-tab>Sitios Web</v-tab>
+    <v-tab>Diseño Gráfico</v-tab>
+    <v-tab>Vídeos</v-tab>
+    <v-tab>Apps</v-tab>
+    <v-tab>3D</v-tab>
 
-        <v-tabs centered show-arrows>
-          <v-tab>Certificados</v-tab>
-          <v-tab>Sitios Web</v-tab>
-          <v-tab>Diseño Gráfico</v-tab>
-          <v-tab>Vídeos</v-tab>
-          <v-tab>Apps</v-tab>
-          <v-tab>3D</v-tab>
+    <!-- Certificados -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="n in 12"
+          :key="'cert-'+n"
+          :src="`./img/certificado/certificados${n}.jpg`"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+        ></v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
 
-          <!-- Certificados -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="80vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="n in 12"
-                :key="'cert-'+n"
+    <!-- Sitios Web -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="500"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(site, index) in sitiosActivos"
+          :key="'site-'+index"
+          class="pa-4"
+        >
+          <v-card class="mx-auto" max-width="800" outlined>
+            <v-img
+              :src="'./img/paginas/' + site.sitio + '.png'"
+              height="250"
+              :alt="site.sitio"
+              @error="replaceWithErrorImage"
+            ></v-img>
+            <v-card-title class="primary--text">{{ site.sitio }}</v-card-title>
+            <v-card-text>
+              <div v-html="site.leng"></div>
+              <v-btn
+                :href="site.enlace"
+                target="_blank"
+                color="primary"
+                outlined
+                small
+                class="mt-2"
               >
-                <v-img
-                  :src="`./img/certificado/certificados${n}.jpg`"
-                  contain
-                  height="100%"
-                  class="rounded-lg"
-                ></v-img>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+                Visitar sitio
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
 
-          <!-- Sitios Web -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="80vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(site, index) in sitiosActivos"
-                :key="'site-'+index"
-                class="pa-4"
-              >
-                <v-card class="mx-auto" max-width="900" outlined>
-                  <v-img
-                    :src="'./img/paginas/' + site.sitio + '.png'"
-                    contain
-                    height="250"
-                    :alt="site.sitio"
-                    @error="replaceWithErrorImage"
-                  ></v-img>
-                  <v-card-title class="primary--text">{{ site.sitio }}</v-card-title>
-                  <v-card-text>
-                    <div v-html="site.leng"></div>
-                    <v-btn
-                      :href="site.enlace"
-                      target="_blank"
-                      color="primary"
-                      outlined
-                      small
-                      class="mt-2"
-                    >
-                      <v-icon left>mdi-open-in-new</v-icon>
-                      Visitar sitio
-                    </v-btn>
-                  </v-card-text>
-                </v-card>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+    <!-- Diseño Gráfico / Publicaciones -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="500"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="n in 12"
+          :key="'pub-'+n"
+          :src="`./img/galeria/img${n}.jpg`"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+        ></v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
 
-          <!-- Diseño Gráfico -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="n in 12"
-                :key="'pub-'+n"
-              >
-                <v-img
-                  :src="`./img/galeria/img${n}.jpg`"
-                  contain
-                  height="100%"
-                  class="rounded-lg"
-                ></v-img>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+    <!-- Vídeos -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(video, i) in videos"
+          :key="'vid-'+i"
+          class="d-flex align-center justify-center"
+        >
+          <iframe
+            :src="video.url"
+            width="100%"
+            height="315"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="max-width: 600px"
+          ></iframe>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
 
-          <!-- Vídeos -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(video, i) in videos"
-                :key="'vid-'+i"
-                class="d-flex align-center justify-center"
-              >
-                <div style="max-width:900px; width:100%;">
-                  <iframe
-                    :src="video.url"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    width="100%"
-                    height="500"
-                  ></iframe>
-                </div>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+    <!-- Apps -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(app, i) in apps"
+          :key="'app-'+i"
+          class="d-flex flex-column align-center justify-center pa-4"
+        >
+          <a :href="app.link" target="_blank">
+            <v-img
+              :src="app.img"
+              max-width="200"
+              class="mb-4"
+              alt="App"
+            ></v-img>
+          </a>
+          <span class="text-h6 primary--text">{{ app.name }}</span>
+          <v-btn
+            :href="app.link"
+            target="_blank"
+            color="primary"
+            outlined
+            small
+            class="mt-2"
+          >
+            Descargar APK
+          </v-btn>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
 
-          <!-- Apps -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(app, i) in apps"
-                :key="'app-'+i"
-                class="d-flex flex-column align-center justify-center pa-4"
-              >
-                <a :href="app.link" target="_blank">
-                  <v-img
-                    :src="app.img"
-                    max-width="200"
-                    contain
-                    class="mb-4"
-                    alt="App"
-                  ></v-img>
-                </a>
-                <span class="text-h6 primary--text">{{ app.name }}</span>
-                <v-btn
-                  :href="app.link"
-                  target="_blank"
-                  color="primary"
-                  outlined
-                  small
-                  class="mt-2"
-                >
-                  <v-icon left>mdi-download</v-icon>
-                  Descargar APK
-                </v-btn>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
-
-          <!-- 3D -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(model, i) in modelos3d"
-                :key="'3d-'+i"
-                class="d-flex flex-column align-center justify-center pa-2"
-              >
-                <a
-                  :href="model.profile"
-                  target="_blank"
-                  class="mb-4 primary--text font-weight-bold"
-                >
-                  <v-icon left>mdi-cube</v-icon>
-                  Ver en 3D Warehouse
-                </a>
-                <div style="max-width:900px; width:100%;">
-                  <iframe
-                    :src="model.embed"
-                    frameborder="0"
-                    scrolling="no"
-                    allowfullscreen
-                    width="100%"
-                    height="400"
-                  ></iframe>
-                </div>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
-        </v-tabs>
-      </v-col>
-    </v-row>
-  </v-container>
-
-
-
-
-
+    <!-- 3D -->
+    <v-tab-item>
+      <v-carousel
+        cycle
+        height="400"
+        hide-delimiter-background
+        show-arrows-on-hover
+        delimiter-icon="mdi-circle"
+        class="elevation-2"
+      >
+        <v-carousel-item
+          v-for="(model, i) in modelos3d"
+          :key="'3d-'+i"
+          class="d-flex flex-column align-center justify-center pa-2"
+        >
+          <a
+            :href="model.profile"
+            target="_blank"
+            class="mb-4 primary--text font-weight-bold"
+          >
+            Ver en 3D Warehouse
+          </a>
+          <iframe
+            :src="model.embed"
+            frameborder="0"
+            scrolling="no"
+            width="100%"
+            height="300"
+            allowfullscreen
+            style="max-width: 600px"
+          ></iframe>
+        </v-carousel-item>
+      </v-carousel>
+    </v-tab-item>
+  </v-tabs>
+</v-col>
         </v-col>
       </v-row>
     </v-container>

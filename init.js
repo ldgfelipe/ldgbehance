@@ -33,7 +33,7 @@ new Vue({
           },
         },
         icons: {
-            iconfont: 'md', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+            iconfont:['mdi'],
           },
       }),
     components:{
