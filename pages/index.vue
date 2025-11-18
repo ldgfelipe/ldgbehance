@@ -1,12 +1,43 @@
 <template>
   <v-main class="secondary">
+
+    <v-dialog v-model="menuaction" max-width="300">
+      <v-card>
+        <v-card-title>
+          <v-spacer></v-spacer>
+          <v-btn class="secondary primary--text" @click="closemenu(false)"><v-icon>mdi-close</v-icon></v-btn>
+        </v-card-title>
+        <v-card-text>
+
+          <v-list dense>
+            <v-subheader>Menu General</v-subheader>
+            <v-list-item-group v-model="selectedItem" color="primary">
+              <v-list-item v-for="(item, i) in listamenu" :key="i" @click="navegar(item.link)">
+                <v-list-item-icon>
+                  <v-icon v-text="item.icon"></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.text"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+
+
+
+
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+
+
     <v-container class="primary white--text elevation-23">
-      <v-row>
+      <v-row id="infogral">
         <!-- COLUMNA IZQUIERDA: Información personal + contacto -->
         <v-col cols="12" md="6" class="text-center">
           <h2>FELIPE DE JESÚS CARRERA RENDÓN</h2>
           <h1>DISEÑADOR + DESARROLLADOR WEB</h1>
-          <p class="secondary--text mb-6 " >
+          <p class="secondary--text mb-6 ">
             Creo experiencias digitales con propósito: identidad de marca, sitios web funcionales y sistemas a medida.
           </p>
 
@@ -32,18 +63,21 @@
                 <img src="./img/icon/youtube.png" style="width: 50px; height: 50px" />
               </a>
             </v-col>
+
             <v-col cols="auto">
               <a href="https://www.linkedin.com/in/ldgfelipecarrera" target="_blank" class="secondary--text">
                 <img src="./img/icon/linkedin.png" style="width: 50px; height: 50px" />
               </a>
             </v-col>
+            <v-col cols="auto">
+              <a href="https://3dwarehouse.sketchup.com/by/ldgfelipecarrera" target="_blank" class="secondary--text">
+                <img src="./img/icon/3dwhbco.png" style="width: 50px; height: 50px" />
+              </a>
+            </v-col>
           </v-row>
 
           <!-- Información de contacto destacada -->
-          <div
-            style="border-radius: 15px; width: 100%"
-            class="secondary primary--text text-left pa-6"
-          >
+          <div style="border-radius: 15px; width: 100%" class="secondary primary--text text-left pa-6">
             <v-row>
               <v-col cols="12" md="6" class="pa-2">
                 <v-icon small>mdi-email</v-icon>
@@ -56,19 +90,14 @@
               <v-col cols="12" md="6" class="pa-2">
                 <v-icon small>mdi-map-marker</v-icon> Puebla, México
               </v-col>
-                <v-col cols="12" md="6" class="pa-2">
-              <a  href="download/CV LDG Felipe de Jesus Carrera Rendon 2025.pdf" target="_blank" class="primary--text">
-                <v-icon>mdi-file-pdf-box</v-icon>  Curriculum Vitae
-              </a>
+              <v-col cols="12" md="6" class="pa-2">
+                <a href="download/CV LDG Felipe de Jesus Carrera Rendon 2025.pdf" target="_blank" class="primary--text">
+                  <v-icon>mdi-file-pdf-box</v-icon> Curriculum Vitae
+                </a>
               </v-col>
               <v-col cols="12" class="pa-2 text-center">
-                <v-btn
-                  color="primary"
-                  dark
-                  href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto"
-                  class="mt-2"
-                  target="_blank"
-                >
+                <v-btn color="primary" dark href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto"
+                  class="mt-2" target="_blank">
                   <v-icon left>mdi-send</v-icon> ¿Trabajamos juntos?
                 </v-btn>
               </v-col>
@@ -80,17 +109,13 @@
         <v-col cols="12" md="1"></v-col>
         <v-col cols="12" md="5">
           <transition name="slide-fade">
-            <v-img
-              v-if="show"
-              src="./img/ldgfelipefoto.png"
-              style="max-width: 550px; width: 100%"
-              class="img-responsive"
-            />
+            <v-img v-if="show" src="./img/ldgfelipefoto.png" style="max-width: 550px; width: 100%"
+              class="img-responsive" />
           </transition>
         </v-col>
 
         <!-- ACERCA DE MÍ (reescrito con enfoque estratégico) -->
-        <v-col cols="12" md="6" class="secondary--text">
+        <v-col id="acercademi" cols="12" md="6" class="secondary--text">
           <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
             <h2>ACERCA DE MÍ</h2>
           </div>
@@ -98,15 +123,17 @@
             Soy diseñador gráfico y desarrollador web con más de 6 años de experiencia creando soluciones digitales que
             <strong>comunican, venden y generan confianza</strong>.
             <br /><br />
-            Combino diseño visual con lógica de programación para construir marcas coherentes y sitios web que no solo se ven bien,
+            Combino diseño visual con lógica de programación para construir marcas coherentes y sitios web que no solo
+            se ven bien,
             sino que <strong>resuelven problemas reales de negocio</strong>.
             <br /><br />
-            Trabajo con emprendedores, PYMES y startups en Latinoamérica. Soy autodidacta, meticuloso y apasionado por el detalle.
+            Trabajo con emprendedores, PYMES y startups en Latinoamérica. Soy autodidacta, meticuloso y apasionado por
+            el detalle.
           </p>
         </v-col>
 
         <!-- EDUCACIÓN -->
-        <v-col cols="12" md="6" class="secondary--text text-right">
+        <v-col id="educacion" cols="12" md="6" class="secondary--text text-right">
           <div class="secondary primary--text text-center" style="border-radius: 10px 0px 0px 10px;">
             <h2>EDUCACIÓN</h2>
           </div>
@@ -117,11 +144,7 @@
             <p>Técnico en Sistemas Computacionales</p>
             <p>
               <v-icon x-small>mdi-card-account-details-outline</v-icon>
-              <a
-                href="http://cedula.buholegal.com/6188950/"
-                target="_blank"
-                class="primary--text"
-              >
+              <a href="http://cedula.buholegal.com/6188950/" target="_blank" class="primary--text">
                 Cédula Profesional 6188950
               </a>
             </p>
@@ -129,7 +152,7 @@
         </v-col>
 
         <!-- EXPERIENCIA (mejor formateada) -->
-        <v-col cols="12" md="6" class="secondary--text text-right">
+        <v-col id="experiencia" cols="12" md="6" class="secondary--text text-right">
           <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
             <h2>EXPERIENCIA</h2>
           </div>
@@ -156,7 +179,7 @@
         </v-col>
 
         <!-- SKILLS -->
-        <v-col cols="12" md="6" class="secondary primary--text" style="border-radius: 10px">
+        <v-col cols="12" id="habilidades" md="6" class="secondary primary--text" style="border-radius: 10px">
           <h2 class="text-center">Habilidades Técnicas</h2>
           <v-row>
             <!-- Tus progresscircular aquí (sin cambios) -->
@@ -198,224 +221,175 @@
 
         <!-- GALERÍA (sin cambios estructurales, solo corrección de typo en target) -->
         <v-col cols="12" md="12">
-  
-          
 
-          <v-container fluid>
-    <v-row>
-      <v-col cols="12">
-        <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
-          <h2>Trabajos Destacados</h2>
-        </div>
 
-        <v-tabs centered show-arrows>
-          <v-tab>Certificados</v-tab>
-          <v-tab>Sitios Web</v-tab>
-          <v-tab>Diseño Gráfico</v-tab>
-          <v-tab>Vídeos</v-tab>
-          <v-tab>Apps</v-tab>
-          <v-tab>3D</v-tab>
 
-          <!-- Certificados -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="80vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="n in 12"
-                :key="'cert-'+n"
-              >
-                <v-img
-                  :src="`./img/certificado/certificados${n}.jpg`"
-                  contain
-                  height="100%"
-                  class="rounded-lg"
-                ></v-img>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+          <v-container id="trabajosdestacados" fluid>
+            <v-row>
+              <v-col cols="12" id="sketchup">
+                <div class="secondary primary--text text-center" style="border-radius: 0px 10px 10px 0px;">
+                  <h2>Trabajos Destacados</h2>
+                </div>
 
-          <!-- Sitios Web -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="80vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(site, index) in sitiosActivos"
-                :key="'site-'+index"
-                class="pa-4"
-              >
-                <v-card class="mx-auto" max-width="900" outlined>
-                  <v-img
-                    :src="'./img/paginas/' + site.sitio + '.png'"
-                    contain
-                    height="250"
-                    :alt="site.sitio"
-                    @error="replaceWithErrorImage"
-                  ></v-img>
-                  <v-card-title class="primary--text">{{ site.sitio }}</v-card-title>
+
+
+                <!----3d wherehouse----->
+                <v-card>
+                  <v-card-title class="primary secondary--text">
+                    Sketchup 3d
+                  </v-card-title>
                   <v-card-text>
-                    <div v-html="site.leng"></div>
-                    <v-btn
-                      :href="site.enlace"
-                      target="_blank"
-                      color="primary"
-                      outlined
-                      small
-                      class="mt-2"
-                    >
-                      <v-icon left>mdi-open-in-new</v-icon>
-                      Visitar sitio
-                    </v-btn>
+                    <v-row>
+                      <v-col cols="12" md="4" v-for="m3d in modelos3d">
+                        <v-card max-width="100%" elevation-5>
+
+                          <v-img height="250" :src="m3d.img"></v-img>
+                          <v-card-title>
+                            {{ m3d.name }}
+                          </v-card-title>
+                          <v-card-text>
+                            <v-btn class="primary secondary--text" @click="abrevisor(m3d)">Ver Modelo</v-btn>
+                          </v-card-text>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+
+                    <v-dialog v-model="visor3d">
+                      <v-card>
+                        <v-card-title class="primary secondary--text">
+                          {{ v3d.name }} <v-spacer></v-spacer>
+                          <v-btn class="primary--text" @click="visor3d = false"><v-icon>mdi-close</v-icon></v-btn>
+                        </v-card-title>
+                        <v-card-text>
+                          <div v-html="v3d.url"></div>
+                        </v-card-text>
+                      </v-card>
+                    </v-dialog>
+
                   </v-card-text>
                 </v-card>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+                <!----3d wherehouse----->
 
-          <!-- Diseño Gráfico -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="n in 12"
-                :key="'pub-'+n"
-              >
-                <v-img
-                  :src="`./img/galeria/img${n}.jpg`"
-                  contain
-                  height="100%"
-                  class="rounded-lg"
-                ></v-img>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+                <!-----sitios web-->
+                <v-card>
+                  <v-card-title id="web" class="primary secondary--text">
+                    Sitios Web
+                  </v-card-title>
+                  <v-card-text>
+                    <v-row>
+                      <v-col cols="12" md="4" v-for="(web, index) in sitiosar" key="index" v-if="web.active">
+                        <v-card max-width="100%" elevation-5>
+                          <v-card-title>
+                            {{ web.sitio }}
+                          </v-card-title>
+                          <v-card-text>
+                            {{ web.leng }}
 
-          <!-- Vídeos -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(video, i) in videos"
-                :key="'vid-'+i"
-                class="d-flex align-center justify-center"
-              >
-                <div style="max-width:900px; width:100%;">
-                  <iframe
-                    :src="video.url"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    width="100%"
-                    height="500"
-                  ></iframe>
-                </div>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
 
-          <!-- Apps -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(app, i) in apps"
-                :key="'app-'+i"
-                class="d-flex flex-column align-center justify-center pa-4"
-              >
-                <a :href="app.link" target="_blank">
-                  <v-img
-                    :src="app.img"
-                    max-width="200"
-                    contain
-                    class="mb-4"
-                    alt="App"
-                  ></v-img>
-                </a>
-                <span class="text-h6 primary--text">{{ app.name }}</span>
-                <v-btn
-                  :href="app.link"
-                  target="_blank"
-                  color="primary"
-                  outlined
-                  small
-                  class="mt-2"
-                >
-                  <v-icon left>mdi-download</v-icon>
-                  Descargar APK
-                </v-btn>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
+                          </v-card-text>
+                          <v-card-actions>
+                            <v-btn block class="primary secondary--text" :href="web.enlace"
+                              target="_blank">Visitar</v-btn>
+                          </v-card-actions>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+                  </v-card-text>
 
-          <!-- 3D -->
-          <v-tab-item>
-            <v-carousel
-              cycle
-              height="70vh"
-              hide-delimiter-background
-              show-arrows-on-hover
-              delimiter-icon="mdi-circle"
-              class="elevation-2"
-            >
-              <v-carousel-item
-                v-for="(model, i) in modelos3d"
-                :key="'3d-'+i"
-                class="d-flex flex-column align-center justify-center pa-2"
-              >
-                <a
-                  :href="model.profile"
-                  target="_blank"
-                  class="mb-4 primary--text font-weight-bold"
-                >
-                  <v-icon left>mdi-cube</v-icon>
-                  Ver en 3D Warehouse
-                </a>
-                <div style="max-width:900px; width:100%;">
-                  <iframe
-                    :src="model.embed"
-                    frameborder="0"
-                    scrolling="no"
-                    allowfullscreen
-                    width="100%"
-                    height="400"
-                  ></iframe>
-                </div>
-              </v-carousel-item>
-            </v-carousel>
-          </v-tab-item>
-        </v-tabs>
-      </v-col>
-    </v-row>
-  </v-container>
+                </v-card>
+                <!--web---->
+                <!---videos-->
+                <v-card id="video">
+                  <v-card-title class="primary secondary--text">
+                    Videos
+                  </v-card-title>
+                  <v-card-text>
+                    <v-row>
+                      <v-col cols="12" md="4" v-for="vid in videos">
+                        <v-card max-width="100%" elevation-5 style="text-align:center;">
+
+                          <v-icon class="red--text" style="font-size:300px">mdi-youtube</v-icon>
+                          <v-card-title>
+                            {{ vid.name }}
+                          </v-card-title>
+                          <v-card-text>
+                            <v-btn class="primary secondary--text" @click="abrevisorvideo(vid)">Ver Video</v-btn>
+                          </v-card-text>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+
+                    <v-dialog v-model="visorvid">
+                      <v-card>
+                        <v-card-title class="primary secondary--text">
+                          {{ vidView.name }} <v-spacer></v-spacer>
+                          <v-btn class="primary--text" @click="visorvid = false"><v-icon>mdi-close</v-icon></v-btn>
+                        </v-card-title>
+                        <v-card-text>
+                          <iframe width="100%" height="400" :src="'https://www.youtube.com/embed/' + vidView.url"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </v-card-text>
+                      </v-card>
+                    </v-dialog>
+
+                  </v-card-text>
+                </v-card>
+
+
+                <v-card id="diseño">
+                  <v-card-title class="primary secondary--text">Diseño</v-card-title>
+                  <v-card-text>
+                    <v-carousel  cycle height="70vh" hide-delimiter-background show-arrows-on-hover
+                      delimiter-icon="mdi-circle" class="elevation-2">
+                      <v-carousel-item v-for="n in 12" :key="'pub-' + n">
+                        <v-img :src="`./img/galeria/img${n}.jpg`" contain height="100%" class="rounded-lg"></v-img>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-card-text></v-card>
+
+
+
+
+
+
+
+                <!-- Apps -->
+                <v-card  id="apps">
+                  <v-card-title class="primary secondary--text">Aplicaciones</v-card-title>
+                  <v-card-text>
+                    <v-carousel cycle height="70vh" hide-delimiter-background show-arrows-on-hover
+                      delimiter-icon="mdi-circle" class="elevation-2">
+                      <v-carousel-item v-for="(app, i) in apps" :key="'app-' + i"
+                        class="d-flex flex-column align-center justify-center pa-4">
+                        <a :href="app.link" target="_blank">
+                          <v-img :src="app.img" max-width="200" contain class="mb-4" alt="App"></v-img>
+                        </a>
+                        <span class="text-h6 primary--text">{{ app.name }}</span>
+                        <v-btn :href="app.link" target="_blank" color="primary" outlined small class="mt-2">
+                          <v-icon left>mdi-download</v-icon>
+                          Descargar APK
+                        </v-btn>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-card-text>
+                </v-card>
+                <v-card id="certificados">
+                  <v-card-title class="primary secondary--text">Certificados</v-card-title>
+                  <v-card-text>
+                    <v-carousel cycle height="80vh"  hide-delimiter-background show-arrows-on-hover
+                      delimiter-icon="mdi-circle" class="elevation-2">
+                      <v-carousel-item v-for="n in 12" :key="'cert-' + n">
+                        <v-img :src="`./img/certificado/certificados${n}.jpg`" contain height="100%"
+                          class="rounded-lg"></v-img>
+                      </v-carousel-item>
+                    </v-carousel>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
 
 
 
@@ -481,6 +455,7 @@ a {
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
+
 a:hover {
   opacity: 0.85;
 }
@@ -519,10 +494,13 @@ a:hover {
 .slide-fade-enter-active {
   transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
 .slide-fade-leave-active {
   transition: all 0.2s ease;
 }
-.slide-fade-enter, .slide-fade-leave-to {
+
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateY(10px);
   opacity: 0;
 }
@@ -532,15 +510,19 @@ a:hover {
   h1 {
     font-size: 1.8rem;
   }
+
   h2 {
     font-size: 1.4rem;
   }
+
   .v-col-md-6 {
     padding: 8px !important;
   }
+
   .v-container {
     padding: 12px !important;
   }
+
   .img-responsive {
     margin: 0 auto 24px;
   }
@@ -557,35 +539,142 @@ a:hover {
 module.exports = {
   data() {
     return {
+      listamenu: [
+        {
+          text: 'información general',
+          icon: 'mdi-home',
+          link: 'infogral'
+        },
+        {
+          text: 'Acercade mi',
+          icon: 'mdi-account-circle',
+          link: 'acercademi'
+        },
+        {
+          text: 'Educación',
+          icon: 'mdi-school',
+          link: 'educacion'
+        },
+        {
+          text: 'Habilidades',
+          icon: 'mdi-network',
+          link: 'habilidades'
+        },
+        {
+          text: 'Trabajos destacados',
+          icon: 'mdi-book-open',
+          link: 'trabajosdestacados'
+        },
+        {
+          text: 'sketchup 3d',
+          icon: 'mdi-video-3d',
+          link: 'sketchup'
+        },
+        {
+          text: 'Sitios Web',
+          icon: 'mdi-web-box',
+          link: 'web'
+        },
+        {
+          text: 'video',
+          icon: 'mdi-youtube',
+          link: 'video'
+        },
+        {
+          text: 'Diseño Gráfico',
+          icon: 'mdi-camera-image',
+          link: 'diseño'
+        },
+        {
+          text: 'Aplicaciones',
+          icon: 'mdi-application',
+          link: 'apps'
+        },
+        {
+          text: 'Certificados',
+          icon: 'mdi-certificate',
+          link: 'certificados'
+        },
+
+      ],
       videos: [
-  { url: "https://www.youtube.com/embed/1AzbzaRY4F0" },
-  { url: "https://www.youtube.com/embed/WpW8V3-Inp8" },
-  { url: "https://www.youtube.com/embed/FWx6j0ogHB4" },
-  { url: "https://www.youtube.com/embed/dXrFOOmnsEA" }
-],
-apps: [
-  { name: "Obsoletos", img: "./img/icon/obsoletos.png", link: "./download/obsoletos.apk" },
-  { name: "AppSchools", img: "./img/icon/vuejs.png", link: "./download/appschools.apk" },
-  { name: "Intersom", img: "./img/icon/intersom.jpeg", link: "./download/intersom.apk" }
-],
-modelos3d: [
-  {
-    profile: "https://3dwarehouse.sketchup.com/user/d84c526e-abe6-4d2c-905a-6f22ea6c1d4c",
-    embed: "https://3dwarehouse.sketchup.com/embed/9e4a2179-c982-42ab-8dfe-22eb1bc56d8a?token=QQ9tApBYYmM=&binaryName=s21"
-  },
-  {
-    embed: "https://3dwarehouse.sketchup.com/embed/2ee86659-f571-4c8c-80d7-ec21ee1b5108?token=OgyMn75F630=&binaryName=s21"
-  },
-  {
-    embed: "https://3dwarehouse.sketchup.com/embed/60735ee6-5388-45df-a0b3-0a1e18d5a9cf?token=CcJvRdk4M6s=&binaryName=s21"
-  },
-  {
-    embed: "https://3dwarehouse.sketchup.com/embed/fcfdd774-002a-44d4-9689-93b3f7106be2?token=P8Rv6lCP-ZQ=&binaryName=s21"
-  },
-  {
-    embed: "https://3dwarehouse.sketchup.com/embed/9e8c2cb9-7473-4fef-acd3-fc9ea940e8b3?token=ACn7-8vESEw=&binaryName=s21"
-  }
-],
+        {
+          url: "Ez6LalbP3v0",
+          name: "Chimeneas Puebla: Promoción Buen fin 2025",
+          img: ""
+        },
+        {
+          url: "1AzbzaRY4F0",
+          name: "Kumon: Inversión para el futuro",
+          img: ""
+        },
+        {
+          url: "WpW8V3-Inp8",
+          name: "Kumon: 15 días mas de inscripción sin costo",
+          img: ""
+        },
+        {
+          url: "FWx6j0ogHB4",
+          name: "Kumon: Inscripción sin costo promoción marzo",
+          img: ""
+        },
+        {
+          url: "dXrFOOmnsEA",
+          name: "Kumon: La mejor alternativa de educación",
+          img: ""
+        },
+        {
+          url: "TDTN5kPP00I",
+          name: "Kumon: El exito de un hijo no depende de su inteligencia",
+          img: ""
+        },
+        {
+          url: "14EcCG7Q0lc",
+          name: "Kumon: Las Matemáticas ayuda a tomar mejores desiciones",
+          img: ""
+
+        },
+        {
+          url: "mMd3TdB324I",
+          name: "Kumon: ¿Se distrae tu hijo con facilidad?",
+          img: ""
+
+        }
+      ],
+      apps: [
+        { name: "Obsoletos", img: "./img/icon/obsoletos.png", link: "./download/obsoletos.apk" },
+        { name: "AppSchools", img: "./img/icon/vuejs.png", link: "./download/appschools.apk" },
+        { name: "Intersom", img: "./img/icon/intersom.jpeg", link: "./download/intersom.apk" }
+      ],
+      modelos3d: [
+        {
+          name: 'Deshidratador Solar V0.01',
+          img: 'img/galeria/3d/desh2.png',
+          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/60735ee6-5388-45df-a0b3-0a1e18d5a9cf?token=II39JzVUGL0=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>'
+        },
+
+        {
+          name: 'Deshidratador Solar V0.2',
+          img: 'img/galeria/3d/desh1.png',
+          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/9e4a2179-c982-42ab-8dfe-22eb1bc56d8a?token=ZXkXQ7FbJO8=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>'
+        },
+        {
+          name: 'Kaskarita v0.1',
+          img: 'img/galeria/3d/kaskarita1.png',
+          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/2ee86659-f571-4c8c-80d7-ec21ee1b5108?token=o6Q3TouIBnM=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>'
+        },
+        {
+          name: 'Luminaria Solar Optima24',
+          img: 'img/galeria/3d/lum1.png',
+          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/fcfdd774-002a-44d4-9689-93b3f7106be2?token=h16NOCk6TFA=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>'
+        },
+        {
+          name: 'Luminaria Solar Urban',
+          img: 'img/galeria/3d/lum2.png',
+          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/9e8c2cb9-7473-4fef-acd3-fc9ea940e8b3?token=q0sFXKLL31s=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;"allowfullscreen></iframe>'
+        },
+
+      ],
       show: false,
 
       // Experiencia profesional mejor formateada
@@ -639,8 +728,8 @@ modelos3d: [
           active: true
         },
         {
-          sitio: "Auto Seguros LDG",
-          enlace: "https://autosegurosldg.web.app/",
+          sitio: "ASLife Seguros",
+          enlace: "https://aslife.web.app/",
           leng: "VUEJS",
           active: true
         },
@@ -702,18 +791,18 @@ modelos3d: [
           sitio: "tienda colegiodiscovery",
           enlace: "https://colegiodiscovery.edu.mx/",
           leng: "wordpress",
-          active: true
+          active: false
         },
         {
           sitio: "Sistema Arministración Kumon",
           enlace: "https://kumonsistem.web.app/",
-          leng: "vuejs firebase <i>en desarrollo</i>",
+          leng: "vuejs firebase -en desarrollo-",
           active: true
         },
         {
           sitio: "profetit",
           enlace: "https://profetit.org",
-          leng: "php laravel <i>en desarrollo</i>",
+          leng: "php laravel",
           active: true
         },
         {
@@ -749,28 +838,71 @@ modelos3d: [
         {
           sitio: "facilweb",
           enlace: "https://facilweb.com.mx",
-          leng: "wordpress",
+          leng: "Desarrollado en wordpress",
           active: false
         },
+        {
+          sitio: "comunidad MediWork",
+          enlace: "https://comunidadmediwork.com.mx",
+          leng: "Desarrollo de plug wordpress directorio medico y pregunta de ia medica",
+          active: true
+        },
+        {
+          sitio: "Luminarias Solares",
+          enlace: "https://luminarias.saecsa.com",
+          leng: "Desarrollo wordpress para venta de luminarias solares",
+          active: true
+        },
+        {
+          sitio: "Calentadores Solares",
+          enlace: "https://saecsa.com/venta-de-calentadores-solares",
+          leng: "Desarrollo html, php, javascript, jquery e integración con mercadopago",
+          active: true
+        }
+
       ],
+      visor3d: false,
+      v3d: {},
+      visorvid: false,
+      vidView: {},
+      selectedItem: 1
     };
   },
   computed: {
-  sitiosActivos() {
-    return this.sitiosar.filter(s => s.active === true);
-  }
-},
-  methods: {
-     replaceWithErrorImage(e) {
-    e.target.src = './img/icon/vuejs.png'; // imagen fallback
+    sitiosActivos() {
+      return this.sitiosar.filter(s => s.active === true);
+    }
   },
+  methods: {
+    navegar(id) {
+      document.getElementById(id).scrollIntoView()
+      this.$emit('closemenu', false)
+    },
+    abrevisor(p) {
+      this.visor3d = true,
+        this.v3d = p
+    },
+    abrevisorvideo(p) {
+      this.visorvid = true,
+        this.vidView = p
+    },
+    replaceWithErrorImage(e) {
+      e.target.src = './img/icon/vuejs.png'; // imagen fallback
+    },
     scrollMethod() {
       // Puedes usarlo más adelante si añades scroll suave
+    },
+    closemenu(p) {
+      this.$emit('closemenu', p)
     }
+
   },
   components: {
     progresscircular: httpVueLoader("../components/progressloader/progressloader.vue"),
     progresslinear: httpVueLoader("../components/progresslinear/progresslinear.vue")
+  },
+  props: {
+    menuaction: false
   },
   mounted() {
     setTimeout(() => {

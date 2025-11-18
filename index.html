@@ -57,8 +57,8 @@ LDGFELIPE BEHANCE
 
         <div id="app">
             <v-app >
-                <cabecera></cabecera>
-                <router-view ></router-view>
+                <cabecera @menuaction="enviogral"></cabecera>
+                <router-view :menuaction="menuact" @closemenu="enviogral"></router-view>
                 <piedepagina></piedepagina>
             </v-app>
         </div>

@@ -19,12 +19,22 @@ Vue.directive('scroll',{
 
 new Vue({
     el:"#app",
+    data(){
+      return {
+        menuact:false
+      }
+    },
+    methods:{
+      enviogral(p){
+        this.menuact=p
+      }
+    },
     router,
     vuetify: new Vuetify({
         theme: {
           themes: {
             light: {
-              primary: '#294255',
+              primary: '#26055c',
               secondary: '#E8F1F2',
               accent: '#8c9eff',
               success:'#00A859',
