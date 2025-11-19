@@ -341,8 +341,8 @@
                   <v-card-text>
                     <v-carousel  cycle height="70vh" hide-delimiter-background show-arrows-on-hover
                       delimiter-icon="mdi-circle" class="elevation-2">
-                      <v-carousel-item v-for="n in 12" :key="'pub-' + n">
-                        <v-img :src="`./img/galeria/img${n}.jpg`" contain height="100%" class="rounded-lg"></v-img>
+                      <v-carousel-item v-for="n in 29" :key="'pub-' + n">
+                        <v-img :src="`./img/galeria/diseño/img${n}.jpg`" contain height="100%" class="rounded-lg"></v-img>
                       </v-carousel-item>
                     </v-carousel>
                   </v-card-text></v-card>
