@@ -83,7 +83,7 @@
               </v-col>
               <v-col cols="12" md="6" class="pa-2">
                 <v-icon small>mdi-whatsapp</v-icon>
-                <a href="https://wa.me/5212218177358&text=Hola quiero trabajar contigo" target="_blank" class="primary--text">+52 221 817 7358</a>
+                <a href="https://wa.me/2227328662&text=Hola quiero trabajar contigo" target="_blank" class="primary--text">+52 2227 32 86 62</a>
               </v-col>
               <v-col cols="12" md="6" class="pa-2">
                 <v-icon small>mdi-map-marker</v-icon> Puebla, México
@@ -277,6 +277,7 @@
                     <v-row>
                       <v-col cols="12" md="4" v-for="(web, index) in sitiosar" key="index" v-if="web.active">
                         <v-card max-width="100%" elevation-5>
+                          <v-img :src="web.img" ></v-img>
                           <v-card-title>
                             {{ web.sitio }}
                           </v-card-title>
@@ -346,12 +347,6 @@
                       </v-carousel-item>
                     </v-carousel>
                   </v-card-text></v-card>
-
-
-
-
-
-
 
                 <!-- Apps -->
                 <v-card  id="apps">
@@ -729,48 +724,56 @@ module.exports = {
         {
           sitio: "Planeta preescolar",
           enlace: "https://planetapreescolar.com",
+          img:"img/paginas/Planeta preescolar.png",
           leng: "VUEJS",
           active: true
         },
         {
           sitio: "ASLife Seguros",
           enlace: "https://aslife.web.app/",
+          img:"img/paginas/aslife.png",
           leng: "VUEJS",
           active: true
         },
         {
           sitio: "Vanderbilt",
           enlace: "https://vanderbilt.edu.mx",
+          img:"img/paginas/Vanderbilt.png",
           leng: "wordpress",
           active: true
         },
         {
           sitio: "Vanderbilt Comunidad",
           enlace: "https://vanderbilt.edu.mx/comunidad",
+          img:"img/paginas/Vanderbilt Comunidad.png",
           leng: "VUEJS y Codeigniter",
           active: false
         },
         {
           sitio: "Obsoletos",
           enlace: "https://obsoletos.com.mx",
+          img:"img/paginas/Obsoletos.png",
           leng: "PHP y VUEJS",
           active: false
         },
         {
           sitio: "mind-publicidad",
           enlace: "http://mind-publicidad.com/",
+          img:"img/paginas/mind-publicidad.png",
           leng: "wordpress y VUEJS",
           active: false
         },
         {
           sitio: "algiocontrol",
-          enlace: "http://algiocontrol.ml/",
+          enlace: "http://algiocontrol.com/",
+          img:"img/paginas/algiocontrol.png",
           leng: "wordpress",
           active: false
         },
         {
           sitio: "barbershopmasterclass",
           enlace: "http://barbershopmasterclass.ml/",
+          img:"img/paginas/barbershopmasterclass.png",
           leng: "wordpress",
           active: false
         },
@@ -795,18 +798,21 @@ module.exports = {
         {
           sitio: "tienda colegiodiscovery",
           enlace: "https://colegiodiscovery.edu.mx/",
+          img:"img/paginas/tienda colegiodiscovery.png",
           leng: "wordpress",
           active: false
         },
         {
           sitio: "Sistema Arministración Kumon",
           enlace: "https://kumonsistem.web.app/",
+          img:"img/paginas/Sistema Arministración Kumon.png",
           leng: "vuejs firebase -en desarrollo-",
           active: true
         },
         {
           sitio: "profetit",
           enlace: "https://profetit.org",
+          img:"img/paginas/profetit.png",
           leng: "php laravel",
           active: true
         },
@@ -814,6 +820,7 @@ module.exports = {
           sitio: "Torre Helea",
           enlace: "https://torrehelea.com",
           leng: "php laravel <i>en desarrollo</i>",
+          img:"img/paginas/Torre Helea.png",
           active: false
         },
         {
@@ -831,12 +838,14 @@ module.exports = {
         {
           sitio: "Distribuidora Santa Fe",
           enlace: "https://santafedistribuidora.com",
+          img:"img/paginas/Distribuidora Santa Fe.png",
           leng: "wordpress",
           active: true
         },
         {
           sitio: "easythinx",
           enlace: "https://easythinx.com",
+          img:"img/paginas/easythinx.png",
           leng: "Laravel y Vuejs",
           active: true
         },
@@ -849,18 +858,21 @@ module.exports = {
         {
           sitio: "comunidad MediWork",
           enlace: "https://comunidadmediwork.com.mx",
+           img:"img/paginas/comunidad mediwork.png",
           leng: "Desarrollo de plug wordpress directorio medico y pregunta de ia medica",
           active: true
         },
         {
           sitio: "Luminarias Solares",
           enlace: "https://luminarias.saecsa.com",
+          img:"img/paginas/luminarias-solares.png",
           leng: "Desarrollo wordpress para venta de luminarias solares",
           active: true
         },
         {
           sitio: "Calentadores Solares",
           enlace: "https://saecsa.com/venta-de-calentadores-solares",
+          img:"img/paginas/calentadores-solares.png",
           leng: "Desarrollo html, php, javascript, jquery e integración con mercadopago",
           active: true
         }

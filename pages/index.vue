@@ -55,6 +55,11 @@
             Agendar una reunión
           </v-btn>
 
+           <v-btn color="primary" large class="mr-4" to="/quiensoy" >
+            Conoce al Freelance
+          </v-btn>
+
+
         </v-col>
 
         <!-- Imagen o ilustración -->
@@ -146,6 +151,30 @@
         </v-col>
 
       </v-row>
+    </v-container>
+
+    <v-container>
+     
+      <v-row>
+        <v-col cols="12">
+           <h4 class="text-h4 font-weight-bold mb-4 text-center black--text">Clientes</h4>
+        </v-col>
+        <v-col cols="12" class="text-center" >
+          <v-btn href="https://profetit.org" target="_blank" style="max-width:100%; width:200px; height:200px;" > <v-img src="img/clientes/logo-profetit.png" width="200px" ></v-img></v-btn>
+       
+          <v-btn href="https://comunidadmediwork.com.mx" target="_blank" style="max-width:100%; width:200px; height:200px; " > <v-img src="img/clientes/mediwork.png" width="200px" ></v-img></v-btn>
+        
+          <v-btn href="https://planetapreescolar.com" target="_blank" style="max-width:100%; width:200px; height:200px; " ><v-img src="img/clientes/planetapreescolar.png" width="200px" ></v-img></v-btn>
+        
+          <v-btn href="https://saecsaenergiasolar.com" target="_blank" style="max-width:100%; width:200px; height:200px; " ><v-img src="img/clientes/saecsa.png" width="200px" ></v-img></v-btn>
+    
+          <v-btn href="https://chimeneaspuebla.com.mx" target="_blank" style="max-width:100%; width:200px; height:200px; " ><v-img src="img/clientes/chimeneaspuebla.png" width="200px" ></v-img></v-btn>
+
+          <v-btn href="https://gpsconstructo.com" target="_blank" style="max-width:100%; width:200px; height:200px; " ><v-img src="img/clientes/gpsconstructo.png" width="200px" ></v-img></v-btn>
+
+        </v-col>
+      </v-row>
+
     </v-container>
 
     <!-- CTA FINAL -->

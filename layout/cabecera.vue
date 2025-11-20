@@ -1,7 +1,7 @@
 <template>
     <v-card style="position:fixed; z-index:99999999999; width:100%;">
         <v-card-title class="primary white--text" >
-      <img src="img/logomenu.png" style="width:100%; max-width:155px;" />       <v-spacer></v-spacer>
+      <v-btn to="/" class="primary" ><img src="img/logomenu.png" style="width:100%; max-width:155px;" />  </v-btn>     <v-spacer></v-spacer>
             <v-btn class="secondary primary--text" @click="openmenu(true)"><v-icon>mdi-menu</v-icon></v-btn>
 
            
