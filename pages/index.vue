@@ -73,6 +73,13 @@
 
       </v-row>
     </v-container>
+<v-container style="text-align:center;">
+  <h3>Visita nuestra tienda de desarrollo de código</h3>
+
+  <v-btn color="primary" large class="mr-4" to="tienda_dev" >
+          Entrar a la cienda de código
+          </v-btn>
+</v-container>
 
     <!-- SECCION DE SERVICIOS -->
     <v-container class="py-14">

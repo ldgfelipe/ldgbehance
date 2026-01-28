@@ -2,7 +2,7 @@ const routes=[
     {path:"/",component:httpVueLoader('./pages/index.vue')},
     {path:"/quiensoy",component:httpVueLoader('./pages/quiensoy.vue')},
     {path:"/avisodeprivacidad",component:httpVueLoader('./pages/avisodeprivacidad.vue')},
-    
+    {path:"/tienda_dev",component:httpVueLoader('./pages/tienda_dev.vue')},
 ]
 const router=new VueRouter({
     routes:routes
