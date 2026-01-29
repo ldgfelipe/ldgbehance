@@ -47,7 +47,14 @@
             <v-card-actions>
               <v-btn color="primary" text font-weight-bold>Ver detalles</v-btn>
               <v-spacer></v-spacer>
+           
               <span class="text-h6 font-weight-bold">${{ item.price }}</span>
+
+            </v-card-actions>
+            <v-card-actions>
+   
+                 <a href="https://invify.online/wp-content/uploads/2026/01/seo-cannibalism-detector.zip" target="_blank"><v-icon>mdi-download</v-icon> Descarga Seo Cannibalism Detector ¡Ahora!</a>
+
             </v-card-actions>
           </v-card>
         </v-col>
