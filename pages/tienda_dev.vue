@@ -140,7 +140,7 @@ module.exports = {
       this.anuncio = !this.anuncio;
     },
     comprar(plan) {
-      const url = `https://www.paypal.com/ncp/payment/A2Y8UCA95JFF8`;
+      const url = `https://invify.online/wp-json/scp/v1/pay/canibalismo-seo`;
       window.open(url, '_blank');
     }
   }
