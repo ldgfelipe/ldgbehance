@@ -48,7 +48,7 @@
               <v-btn color="primary" text font-weight-bold>Ver detalles</v-btn>
               <v-spacer></v-spacer>
            
-              <span class="text-h6 font-weight-bold">${{ item.price }}</span>
+              <span class="text-h6 font-weight-bold">${{ item.price }} MXN / $26 USD</span>
 
             </v-card-actions>
             <v-card-actions>
