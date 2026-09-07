@@ -229,6 +229,9 @@
             <div class="cv-section-label">05 — Portafolio</div>
             <h2 class="cv-section-title white--text">Trabajos destacados</h2>
             <div class="cv-section-line"></div>
+            <p class="cv-section-desc">
+              Mi portafolio exhibe una selección de proyectos diseñados y desenvolvidos con Vue.js, abarcando soluciones web corporativas, aplicaciones interactivas y trabajos de diseño gráfico. Cada proyecto demuestra mi compromiso con la calidad, la innovación y la resolución de problemas reales para negocios en Latinoamérica. Estoy disponible para nuevas colaboraciones y con gusto compartiré más detalles sobre cómo mi experiencia puede contribuir al éxito de tu próximo proyecto.
+            </p>
           </v-col>
           <v-col cols="12" md="7">
             <v-tabs center-active class="cv-tabs">
