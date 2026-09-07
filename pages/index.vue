@@ -226,7 +226,7 @@
       <v-container>
         <v-row class="mb-6">
           <v-col cols="12" md="5">
-            <div class="cv-section-label">05 — Portafolio</div>
+            <div class="cv-section-label">05 - proyectos</div>
             <h2 class="cv-section-title">Trabajos destacados</h2>
             <div class="cv-section-line"></div>
             <p class="cv-section-desc">
