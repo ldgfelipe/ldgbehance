@@ -2,7 +2,6 @@ const routes=[
     {path:"/",component:httpVueLoader('./pages/index.vue')},
     {path:"/quiensoy",component:httpVueLoader('./pages/quiensoy.vue')},
     {path:"/avisodeprivacidad",component:httpVueLoader('./pages/avisodeprivacidad.vue')},
-    {path:"/tienda_dev",component:httpVueLoader('./pages/tienda_dev.vue')},
 ]
 const router=new VueRouter({
     routes:routes
@@ -37,10 +36,10 @@ new Vue({
         theme: {
           themes: {
             light: {
-              primary: '#182c4b',
-              secondary: '#E8F1F2',
-              accent: '#8c9eff',
-              success:'#00A859',
+              primary: '#111111',
+              secondary: '#FFFFFF',
+              accent: '#FF6B00',
+              success: '#00A859',
               error: '#ED3237',
             },
           },

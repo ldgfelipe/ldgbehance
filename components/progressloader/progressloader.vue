@@ -72,7 +72,10 @@ module.exports={
        type:Number,
        default:()=>{return 22}
    },
-   color:"primary"
+   color:{
+        type:String,
+        default:()=>{return "primary"}
+    }
    }
 }
 </script>

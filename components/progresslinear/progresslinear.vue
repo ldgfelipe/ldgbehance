@@ -73,7 +73,10 @@ module.exports={
        type:Number,
        default:()=>{return 10}
    },
-   color:"primary"
+   color:{
+      type:String,
+      default:()=>{return "primary"}
+    }
    }
 }
 </script>
