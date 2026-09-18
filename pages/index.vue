@@ -109,7 +109,7 @@
               </v-col>
               <v-col cols="12" md="6">
                 <v-icon small class="accent--text">mdi-file-pdf-box</v-icon>
-                <a href="download/CV LDG Felipe de Jesus Carrera Rendon 2025.pdf" target="_blank" class="cv-link">Descargar CV en PDF</a>
+                <a href="download/CVLDGFCR2026.pdf" target="_blank" class="cv-link">Descargar CV en PDF</a>
               </v-col>
             </v-row>
           </v-col>
