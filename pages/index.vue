@@ -235,6 +235,7 @@
           <v-col cols="12" md="5">
             <div class="cv-section-label">05 - proyectos</div>
             <h2 class="cv-section-title">Trabajos destacados</h2>
+            <p class="cv-section-subtitle">Desarrollo Web & IA | Optimización de Tiempos</p>
             <div class="cv-section-line"></div>
             <p class="cv-section-desc">
               Mi portafolio exhibe una selección de proyectos diseñados y desenvolvidos con Vue.js, abarcando soluciones web corporativas, aplicaciones interactivas y trabajos de diseño gráfico. Cada proyecto demuestra mi compromiso con la calidad, la innovación y la resolución de problemas reales para negocios en Latinoamérica. Estoy disponible para nuevas colaboraciones y con gusto compartiré más detalles sobre cómo mi experiencia puede contribuir al éxito de tu próximo proyecto.
@@ -556,6 +557,12 @@ a { text-decoration: none; color: inherit; }
 }
 .cv-section-desc { margin-top: 18px; font-weight: 300; line-height: 1.7; color: #5a5a5e; }
 .cv-section-dark .cv-section-desc { color: #b9b9bd; }
+.cv-section-subtitle {
+  margin-top: 8px;
+  font-size: .9rem;
+  color: #5a5a5e;
+  font-weight: 300;
+}
 
 /* ---------- Acerca ---------- */
 .cv-about-text { font-size: 1.05rem; line-height: 1.8; color: #3c3c40; margin-bottom: 18px; text-align: justify; }
