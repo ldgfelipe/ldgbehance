@@ -23,7 +23,7 @@
       </v-card>
     </v-dialog>
 
-    <!-- HERO CON MISMO DISEÑO QUE LA PÁGINA PRINCIPAL -->
+    <!-- HERO CON FOTO PEQUEÑO A LA DERECHAR SUPERIOR -->
     <section id="inicio" class="cv-hero">
       <canvas ref="dncanvas" class="cv-hero-canvas"></canvas>
       <v-container class="cv-hero-content">
@@ -50,9 +50,15 @@
             </div>
           </v-col>
 
-          <v-col cols="12" sm="12" md="12" class="cv-hero-photo-col">
-            <div class="cv-hero-photo">
-              <v-img src="./img/ldgfelipefoto.png" class="cv-photo-img" alt="Felipe Carrera"></v-img>
+          <!-- Foto pequeña a la derecha superior -->
+          <v-col cols="12" sm="12" md="4" class="cv-hero-photo-col" style="order: 2; justify-self: flex-end;">
+            <div class="cv-hero-photo" style="max-width: 250px; width: 250px; order: 2;">
+              <v-img
+                src="./img/ldgfelipefoto.png"
+                class="cv-photo-img"
+                alt="Felipe Carrera"
+                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;"
+              ></v-img>
             </div>
           </v-col>
         </v-row>
@@ -95,8 +101,9 @@
               <v-img
                 :src="`./img/paginas/${item.img}`"
                 aspect-ratio="1.5"
-                class="cv-work-img"
+                class="cv-work-img zoom-enabled"
                 alt=""
+ @click="openLightbox(`./img/paginas/${item.img}`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -132,8 +139,9 @@
               <v-img
                 :src="`./img/certificado/certificados${index + 1}.jpg`"
                 aspect-ratio="1.5"
-                class="cv-work-img"
+                class="cv-work-img zoom-enabled"
                 alt=""
+ @click="openLightbox(`./img/certificado/certificados${index + 1}.jpg`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -169,8 +177,9 @@
               <v-img
                 :src="`./img/galeria/img${index + 1}.jpg`"
                 aspect-ratio="1.5"
-                class="cv-work-img"
+                class="cv-work-img zoom-enabled"
                 alt=""
+ @click="openLightbox(`./img/galeria/img${index + 1}.jpg`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -259,6 +268,14 @@
         </v-row>
       </v-container>
     </section>
+
+    <!-- LIGHTBOX PARA ZOOM DE IMÁGENES -->
+    <transition name="fade">
+      <div v-if="lightboxOpen" class="cv-lightbox" @click="lightboxOpen = false">
+        <span class="cv-close" @click.stop="lightboxOpen = false">&times;</span>
+        <img :src="lightboxImage" alt="Portafolio ampliado">
+      </div>
+    </transition>
   </v-main>
 </template>
 
@@ -268,6 +285,8 @@ module.exports = {
     return {
       menuOpen: false,
       activeTab: 'sitios',
+      lightboxOpen: false,
+      lightboxImage: '',
       // Datos para los trabajos destacados - Sitios Web
       sitiosDestacados: [
         {
@@ -365,6 +384,10 @@ module.exports = {
       if (elemento) {
         elemento.scrollIntoView({ behavior: 'smooth' });
       }
+    },
+    openLightbox(imgPath) {
+      this.lightboxImage = imgPath;
+      this.lightboxOpen = true;
     }
   },
   mounted() {
@@ -478,6 +501,103 @@ module.exports = {
 .cv-section-dark .cv-about-text {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+/* Zoom y lightbox para imágenes de portafolio */
+.cv-work-img {
+  filter: grayscale(100%) contrast(1.04);
+  transition: filter .3s ease;
+  cursor: zoom-in;
+  user-select: none;
+}
+
+.cv-work-img.zoom-enabled {
+  transition: transform .3s ease, filter .3s ease;
+}
+
+.cv-work-img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.cv-work-img.zoomed {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/* Modal/lightbox para vista ampliada */
+.cv-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.cv-lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.cv-lightbox .cv-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cv-lightbox .cv-close:hover {
+  background: rgba(255,50,50,0.3);
+}
+
+/* Responsivo: zoom desactivado en móviles para mejor performance */
+@media (max-width: 600px) {
+  .cv-work-img:hover {
+    transform: none;
+  }
+  .cv-work-img.zoomed {
+    transform: none;
+  }
+}
+
+/* Animación fade para lightbox */
+.cv-lightbox-enter-active,
+.cv-lightbox-leave-active {
+  transition: opacity .3s ease;
+}
+.cv-lightbox-enter,
+.cv-lightbox-leave-to {
+  opacity: 0;
+}
+
+/* Responsivo: zoom desactivado en móviles para mejor performance */
+@media (max-width: 600px) {
+  .cv-work-img:hover {
+    transform: none;
+  }
+  .cv-work-img.zoomed {
+    transform: none;
+  }
+  .cv-lightbox .cv-close {
+    display: none;
+  }
 }
 
 /* Tarjetas más compactas en móvil */
