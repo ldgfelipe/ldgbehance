@@ -67,7 +67,7 @@
         <v-row>
           <v-col cols="12">
             <div class="cv-section-label">Navegación de Secciones</div>
-            <h2 class="cv-section-title">Explora mis trabajos</div>
+            <h2 class="cv-section-title">Explora mis trabajos</h2>
             <div class="cv-section-line"></div>
           </v-col>
         </v-row>
