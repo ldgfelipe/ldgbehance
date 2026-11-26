@@ -42,3 +42,19 @@
 }
 
 /* v-progress-circular en sección oscura: texto visible */
+
+/* Variables globales del tema (antes estaban scoped y no aplicaban globalmente) */
+:root {
+  --negro: #0b0b0c;
+  --grafito: #161719;
+  --gris-soft: #f4f4f3;
+  --gris-borde: #e6e6e4;
+  --naranja: #ff6b00;
+}
+
+/* Garantía de contraste: títulos y subtítulos SIEMPRE visibles en secciones oscuras */
+.cv-section-dark .cv-section-title { color: #fff !important; }
+.cv-section-dark .cv-section-subtitle { color: #b9b9bd !important; }
+.cv-section-dark .cv-section-desc { color: #b9b9bd; }
+.cv-section-dark .cv-section-label { color: var(--naranja); }
+.cv-section-dark .cv-about-text { color: #b9b9bd; }

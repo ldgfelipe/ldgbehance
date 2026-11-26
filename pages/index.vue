@@ -833,6 +833,11 @@ videos: [
   },
   methods: {
     navegar(id) {
+      if (id === 'portafolio') {
+        this.$router.push('/portafolio');
+        this.$emit('closemenu', false);
+        return;
+      }
       var el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       this.$emit('closemenu', false);
