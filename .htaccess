@@ -1,0 +1,10 @@
+# Evitar caché del navegador en los componentes .vue
+# (httpVueLoader los carga por AJAX y el navegador los cachea,
+#  impidiendo ver los cambios al actualizar)
+<IfModule mod_headers.c>
+  <FilesMatch "\.(vue)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>

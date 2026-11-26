@@ -1,5 +1,6 @@
 const routes=[
-    {path:"/",component:httpVueLoader('./pages/index.vue')},
+    {path:"/",component:httpVueLoader('./pages/index.vue?v=6')},
+    {path:"/portafolio",component:httpVueLoader('./pages/portafolio.vue?v=6')},
     {path:"/quiensoy",component:httpVueLoader('./pages/quiensoy.vue')},
     {path:"/avisodeprivacidad",component:httpVueLoader('./pages/avisodeprivacidad.vue')},
 ]
