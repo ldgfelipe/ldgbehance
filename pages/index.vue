@@ -545,7 +545,7 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 12px;
 }
 .cv-section-title { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; }
-.cv-section-dark .cv-section-title { color: #000; }
+.cv-section-dark .cv-section-title { color: #fff; }
 .cv-section-line {
   width: 56px; height: 3px; background: var(--naranja);
   margin-top: 18px;
