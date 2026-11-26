@@ -121,14 +121,14 @@
     </section>
 
     <!-- HABILIDADES -->
-    <section id="habilidades" class="cv-section cv-section-dark">
+    <section id="habilidades" class="cv-section">
       <v-container>
         <v-row>
           <v-col cols="12" md="5">
             <div class="cv-section-label">02 — Capacidades</div>
-            <h2 class="cv-section-title white--text">Habilidades técnicas</h2>
+            <h2 class="cv-section-title">Habilidades técnicas</h2>
             <div class="cv-section-line"></div>
-            <p class="cv-section-desc white--text">
+            <p class="cv-section-desc">
               Stack orientado a resultados: desarrollo a la medida, administración
               de sistemas y soluciones cloud para proyectos escalables.
             </p>
@@ -141,7 +141,7 @@
             </v-row>
             <v-row class="cv-chips">
               <v-col cols="12">
-                <v-chip v-for="c in stack" :key="c" small outlined class="cv-chip white--text mr-2 mb-2">{{ c }}</v-chip>
+                <v-chip v-for="c in stack" :key="c" small outlined class="cv-chip mr-2 mb-2">{{ c }}</v-chip>
               </v-col>
             </v-row>
           </v-col>
@@ -149,10 +149,17 @@
 
         <v-row class="mt-10">
           <v-col cols="12" md="6">
-            <div class="cv-lang white--text">
-              <h4>Idiomas</h4>
-              <progresslinear :height="8" :valor="100" titulo="Español" color="accent" />
-              <progresslinear :height="8" :valor="60" titulo="Inglés" color="accent" />
+            <div class="cv-lang">
+              <h3>Idiomas</h3>
+
+               <h5>Español</h5>
+              <progresslinear style="color:#000;" :height="8" :valor="100" color="accent" ></progresslinear>
+
+
+              <h5>Inglés</h5>
+              <progresslinear :height="8" :valor="60" color="accent" ></progresslinear>
+             
+              
             </div>
           </v-col>
         </v-row>
@@ -215,7 +222,7 @@
             </v-row>
             <div class="cv-cedula">
               <v-icon small class="accent--text">mdi-card-account-details-outline</v-icon>
-              <a href="http://cedula.buholegal.com/6188950/" target="_blank" class="cv-link">
+              <a href="download/CONSTANCIA_FELIPE DE JESUS CARRERA.pdf" target="_blank" class="cv-link">
                 Cédula Profesional 6188950
               </a>
             </div>
@@ -231,6 +238,7 @@
           <v-col cols="12" md="5">
             <div class="cv-section-label">05 - proyectos</div>
             <h2 class="cv-section-title">Trabajos destacados</h2>
+            <p class="cv-section-subtitle">Desarrollo Web & IA | Optimización de Tiempos</p>
             <div class="cv-section-line"></div>
             <p class="cv-section-desc">
               Mi portafolio exhibe una selección de proyectos diseñados y desenvolvidos con Vue.js, abarcando soluciones web corporativas, aplicaciones interactivas y trabajos de diseño gráfico. Cada proyecto demuestra mi compromiso con la calidad, la innovación y la resolución de problemas reales para negocios en Latinoamérica. Estoy disponible para nuevas colaboraciones y con gusto compartiré más detalles sobre cómo mi experiencia puede contribuir al éxito de tu próximo proyecto.
@@ -552,6 +560,12 @@ a { text-decoration: none; color: inherit; }
 }
 .cv-section-desc { margin-top: 18px; font-weight: 300; line-height: 1.7; color: #5a5a5e; }
 .cv-section-dark .cv-section-desc { color: #b9b9bd; }
+.cv-section-subtitle {
+  margin-top: 8px;
+  font-size: .9rem;
+  color: #5a5a5e;
+  font-weight: 300;
+}
 
 /* ---------- Acerca ---------- */
 .cv-about-text { font-size: 1.05rem; line-height: 1.8; color: #3c3c40; margin-bottom: 18px; text-align: justify; }
