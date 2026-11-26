@@ -43,7 +43,7 @@
                 <v-icon left>mdi-whatsapp</v-icon> Conversemos
               </v-btn>
               <v-btn large outlined dark color="white" @click="$router.push('/portafolio')" class="cv-btn-outline">
-                Inicio <v-icon right small>mdi-home</v-icon>
+                Portafolios <v-icon right small>mdi-gallery</v-icon>
               </v-btn>
               <v-btn large outlined dark color="white" @click="scrollARecursos" class="cv-btn-outline">
                 Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
@@ -97,7 +97,7 @@
           <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
-                :src="`./img/paginas/${item.img}`"
+                :src="getImgSrc(item, 'sitios')"
                 aspect-ratio="1.5"
                 class="cv-work-img"
                 alt=""
@@ -134,7 +134,7 @@
           <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
-                :src="`./img/certificado/certificados${index + 1}.jpg`"
+                :src="getImgSrc(item, 'branding')"
                 aspect-ratio="1.5"
                 class="cv-work-img"
                 alt=""
@@ -171,7 +171,7 @@
           <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
-                :src="`./img/galeria/img${index + 1}.jpg`"
+                :src="getImgSrc(item, 'disenio')"
                 aspect-ratio="1.5"
                 class="cv-work-img"
                 alt=""
@@ -208,7 +208,7 @@
           <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-app-card">
               <v-img
-                :src="`./img/icon/${item.img}`"
+                :src="getImgSrc(item, 'apps')"
                 class="app-img"
                 alt=""
               >
@@ -255,7 +255,7 @@
             </p>
             <p class="cv-about-text">
               Con más de 6 años de experiencia trabajando con tecnologías como Vue.js, PHP,
-              Laravel y WordPress, he tenido la oportunidad de colaborar con empresas y
+              Laravel y WordPress,he tenido la oportunidad de colaborar con empresas y
               emprendedores en toda Latinoamérica, entregando soluciones digitales que
               ayudan a crecer sus negocios.
             </p>
@@ -322,21 +322,6 @@ module.exports = {
           leng: 'wordpress y VUEJS',
           enlace: 'http://mind-publicidad.com/',
           descripcion: 'Portal de noticias y portfolio para agencia de publicidad con CMS WordPress.'
-        },
-        // Diseño Gráfico
-        {
-          titulo: 'Diseño de Logo - Kaab Arte',
-          img: 'kaab-arte.png',
-          leng: 'wordpress',
-          enlace: 'https://kaab-arte.com',
-          descripcion: 'Desarrollo de identidad marca para estudio de arte contemporáneo.'
-        },
-        {
-          titulo: 'Diseño Editorial - Facilweb',
-          img: 'facilweb.png',
-          leng: 'wordpress',
-          enlace: 'https://facilweb.com.mx',
-          descripcion: 'Diseño de maquetación y layout para portal de noticias y revistas.'
         }
         // Aplicaciones (comentadas por ahora - se pueden agregar después)
         // {
@@ -353,15 +338,35 @@ module.exports = {
         //   enlace: 'https://example.com/appschools',
         //   descripcion: 'Aplicación educativa para gestión escolar y comunicados.'
         // }
-      ]
-    };
+      ],
+      // Método para obtener la ruta de la imagen según la categoría
+      getImgSrc: function(item, categoria) {
+        const basePath = './img';
+        const nombreImg = item.img;
+        
+        // Mapeo de categorías a carpetas
+        const carpetas = {
+          'sitios': 'paginas',
+          'branding': 'certificado',
+          'disenio': 'galeria',
+          'apps': 'icon'
+        };
+        
+        const carpeta = carpetas[categoria] || 'paginas';
+        return `${basePath}/${carpeta}/${nombreImg}`;
+      }
+    }
   },
   methods: {
     closemenu(val) {
       this.menuOpen = val;
     },
     navegar(id) {
-      this.$router.push({ path: `/${id}` });
+      if (id === 'cv') {
+        this.$router.push('/');
+      } else {
+        this.$router.push({ path: `/${id}` });
+      }
     },
     scrollARecursos() {
       const elemento = document.getElementById('recursos');
@@ -577,6 +582,7 @@ module.exports = {
   line-height: 1.8;
   color: #3c3c40;
   margin-bottom: 18px;
+
 }
 
 .cv-about-text strong { font-weight: 700; }
