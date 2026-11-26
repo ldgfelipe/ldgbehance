@@ -1,7 +1,7 @@
 <template>
   <v-main class="cv-root">
 
-    <!-- MENÚ LATERAL (mismo que en index) -->
+    <!-- MENÚ LATERAL -->
     <v-dialog v-model="menuOpen" max-width="320" content-class="cv-menu" persistent>
       <v-card class="cv-menu-card">
         <v-card-title class="justify-space-between align-center">
@@ -23,12 +23,12 @@
       </v-card>
     </v-dialog>
 
-    <!-- HERO CON FOTO PEQUEÑO A LA DERECHAR SUPERIOR -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="cv-hero">
       <canvas ref="dncanvas" class="cv-hero-canvas"></canvas>
       <v-container class="cv-hero-content">
         <v-row align="center" class="fill-height">
-          <v-col cols="12" sm="12" md="12">
+          <v-col cols="12" sm="12" md="7">
             <div class="cv-hero-tag">
               <span></span> Portafolio de Diseño
             </div>
@@ -36,36 +36,29 @@
               Trabajos <span class="accent--text">Destacados</span>
             </h1>
             <p class="cv-hero-sub">
-              Una selección de mis proyectos de diseño gráfico y desarrollo web más
-              relevantes. Cada pieza ha sido creada con atención al detalle y enfoque
-              en la experiencia del usuario.
+              Selección de mis proyectos de diseño gráfico y desarrollo web más relevantes.
             </p>
             <div class="cv-hero-actions">
               <v-btn large elevation="0" dark color="accent" href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto" target="_blank" class="cv-btn-accent">
                 <v-icon left>mdi-whatsapp</v-icon> Conversemos
               </v-btn>
               <v-btn large outlined dark color="white" @click="scrollARecursos" class="cv-btn-outline">
-                Ver recursos <v-icon right small>mdi-arrow-down</v-icon>
+                Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
           </v-col>
 
-          <!-- Foto pequeña a la derecha superior -->
-          <v-col cols="12" sm="12" md="4" class="cv-hero-photo-col" style="order: 2; justify-self: flex-end;">
-            <div class="cv-hero-photo" style="max-width: 250px; width: 250px; order: 2;">
-              <v-img
-                src="./img/ldgfelipefoto.png"
-                class="cv-photo-img"
-                alt="Felipe Carrera"
-                style="width: 100%; height: auto; border-radius: 8px; object-fit: cover;"
-              ></v-img>
+          <!-- Foto pequeña a la derecha superior, 250px -->
+          <v-col cols="12" sm="12" md="5" class="cv-hero-photo-col">
+            <div class="cv-hero-photo">
+              <v-img src="./img/ldgfelipefoto.png" class="cv-photo-img" alt="Felipe Carrera"></v-img>
             </div>
           </v-col>
         </v-row>
       </v-container>
     </section>
 
-    <!-- SECCIÓN DE RECURSOS / NAVEGACIÓN -->
+    <!-- SECCIÓN DE PORTAFOLIO -->
     <section id="recursos" class="cv-section cv-section-gray">
       <v-container>
         <v-row>
@@ -75,14 +68,16 @@
             <div class="cv-section-line"></div>
           </v-col>
         </v-row>
+
+        <!-- Tabs de navegación -->
         <v-row class="cv-tabs mt-20">
-          <v-col cols="12" md="4">
+          <v-col cols="12" md="8">
             <v-tabs v-model="activeTab">
               <v-tab>
                 <v-icon>mdi-web</v-icon> Sitios Web
               </v-tab>
               <v-tab>
-                <v-icon>mdi-palette</v-icon> Branding & Identidad
+                <v-icon>mdi-palette</v-icon> Branding
               </v-tab>
               <v-tab>
                 <v-icon>mdi-image</v-icon> Diseño Gráfico
@@ -94,16 +89,15 @@
           </v-col>
         </v-row>
 
-        <!-- CONTENIDO PRINCIPAL SEGÚN TAB ACTIVO -->
+        <!-- Contenedor de tarjetas por categoría -->
         <v-row class="mt-20" v-if="activeTab === 'sitios'">
-          <v-col cols="12" sm="12" md="4" lg="3" v-for="(item, index) in sitiosDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in sitiosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/paginas/${item.img}`"
                 aspect-ratio="1.5"
-                class="cv-work-img zoom-enabled"
+                class="cv-work-img"
                 alt=""
- @click="openLightbox(`./img/paginas/${item.img}`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -116,7 +110,7 @@
               </v-card-title>
               <v-card-text class="cv-work-body">
                 <div class="cv-work-leng">{{item.leng}}</div>
-                <div v-html="item.descripcion" style="color: #cfcfd3; font-size: .85rem; line-height: 1.4;"></div>
+                <div v-html="item.descripcion" style="color: #5a5a5e; font-size: .85rem; line-height: 1.4;"></div>
               </v-card-text>
               <v-card-actions class="cv-work-actions text-center">
                 <v-btn
@@ -134,14 +128,13 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'branding'">
-          <v-col cols="12" sm="12" md="4" lg="3" v-for="(item, index) in brandingDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in brandingDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/certificado/certificados${index + 1}.jpg`"
                 aspect-ratio="1.5"
-                class="cv-work-img zoom-enabled"
+                class="cv-work-img"
                 alt=""
- @click="openLightbox(`./img/certificado/certificados${index + 1}.jpg`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -154,7 +147,7 @@
               </v-card-title>
               <v-card-text class="cv-work-body">
                 <div class="cv-work-leng">{{item.leng}}</div>
-                <div v-html="item.descripcion" style="color: #cfcfd3; font-size: .85rem; line-height: 1.4;"></div>
+                <div v-html="item.descripcion" style="color: #5a5a5e; font-size: .85rem; line-height: 1.4;"></div>
               </v-card-text>
               <v-card-actions class="cv-work-actions text-center">
                 <v-btn
@@ -172,14 +165,13 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'disenio'">
-          <v-col cols="12" sm="12" md="4" lg="3" v-for="(item, index) in disenoDestacado" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in disenoDestacado" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/galeria/img${index + 1}.jpg`"
                 aspect-ratio="1.5"
-                class="cv-work-img zoom-enabled"
+                class="cv-work-img"
                 alt=""
- @click="openLightbox(`./img/galeria/img${index + 1}.jpg`)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0 align-center justify-center">
@@ -192,7 +184,7 @@
               </v-card-title>
               <v-card-text class="cv-work-body">
                 <div class="cv-work-leng">{{item.leng}}</div>
-                <div v-html="item.descripcion" style="color: #cfcfd3; font-size: .85rem; line-height: 1.4;"></div>
+                <div v-html="item.descripcion" style="color: #5a5a5e; font-size: .85rem; line-height: 1.4;"></div>
               </v-card-text>
               <v-card-actions class="cv-work-actions text-center">
                 <v-btn
@@ -210,7 +202,7 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'apps'">
-          <v-col cols="12" sm="12" md="4" lg="3" v-for="(item, index) in appsDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in appsDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-app-card">
               <v-img
                 :src="`./img/icon/${item.img}`"
@@ -231,7 +223,7 @@
                     target="_blank"
                     class="cv-work-btn"
                   >
-                    Descargar <v-icon small>mdi-download</v-icon>
+                    Ver <v-icon small>mdi-arrow-right</v-icon>
                   </v-btn>
                 </v-card-actions>
               </v-card>
@@ -241,7 +233,7 @@
       </v-container>
     </section>
 
-    <!-- SECCIÓN SOBRE MÍ AL FINAL -->
+    <!-- SECCIÓN SOBRE MÍ -->
     <section id="acerca" class="cv-section cv-section-dark">
       <v-container>
         <v-row>
@@ -268,14 +260,6 @@
         </v-row>
       </v-container>
     </section>
-
-    <!-- LIGHTBOX PARA ZOOM DE IMÁGENES -->
-    <transition name="fade">
-      <div v-if="lightboxOpen" class="cv-lightbox" @click="lightboxOpen = false">
-        <span class="cv-close" @click.stop="lightboxOpen = false">&times;</span>
-        <img :src="lightboxImage" alt="Portafolio ampliado">
-      </div>
-    </transition>
   </v-main>
 </template>
 
@@ -285,9 +269,7 @@ module.exports = {
     return {
       menuOpen: false,
       activeTab: 'sitios',
-      lightboxOpen: false,
-      lightboxImage: '',
-      // Datos para los trabajos destacados - Sitios Web
+      // Datos para Sitios Web
       sitiosDestacados: [
         {
           titulo: 'Planeta Preescolar',
@@ -318,7 +300,7 @@ module.exports = {
           descripcion: 'Sistema de gestión educativa para centros Kumon con base en Firebase.'
         }
       ],
-      // Datos para Branding & Identidad
+      // Datos para Branding
       brandingDestacados: [
         {
           titulo: 'Identidad Visual - Obsoletos',
@@ -357,7 +339,6 @@ module.exports = {
         {
           titulo: 'APK Obsoletos',
           img: 'obsoletos.png',
-          titulo2: 'APK Obsoletos',
           leng: 'PHP y VUEJS',
           enlace: 'https://example.com/obsoletos',
           descripcion: 'Aplicación móvil de catálogo de obsoletos y tecnología.'
@@ -384,245 +365,26 @@ module.exports = {
       if (elemento) {
         elemento.scrollIntoView({ behavior: 'smooth' });
       }
-    },
-    openLightbox(imgPath) {
-      this.lightboxImage = imgPath;
-      this.lightboxOpen = true;
     }
   },
   mounted() {
-    // Cerrar menú al montar
     this.menuOpen = false;
   }
 };
 </script>
 
 <style scoped>
-/* Personalización para la página de portafolio */
-/* Asegurar que los colores y estilos sean consistentes con el hero */
-
-.cv-work-card {
-  background: #121315;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
+/* Hero section styles */
+.cv-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0b0b0c 0%, #17181a 100%);
+  color: #fff;
   overflow: hidden;
-  height: 100%;
-  transition: transform .25s ease, border-color .25s ease;
-}
-
-.cv-work-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--naranja);
-}
-
-.cv-work-img {
-  filter: grayscale(100%) contrast(1.04);
-  transition: filter .3s ease;
-}
-
-.cv-work-card:hover .cv-work-img {
-  filter: grayscale(0%);
-}
-
-.cv-work-body {
-  padding: 18px 18px 20px;
-}
-
-.cv-work-body h4 {
-  color: #fff;
-  font-size: .98rem;
-}
-
-.cv-work-leng {
-  color: #9c9ca2;
-  font-size: .8rem;
-  margin: 6px 0 14px;
-}
-
-/* Estilos para las tarjetas de aplicaciones */
-.app-img {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 12px;
-}
-
-.app-title {
-  color: #fff;
-  font-size: .9rem;
-}
-
-.app-desc {
-  color: #cfcfd3;
-  font-size: .8rem;
-  text-align: center;
-}
-
-/* Estilos para las tabs */
-.cv-tabs .v-tab {
-  text-transform: none;
-  font-weight: 600;
-  font-size: .82rem;
-  letter-spacing: .4px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 6px;
-  margin: 0 4px 4px 0;
-  color: #cfcfd3;
-  min-width: 100px;
-  flex: 1;
-}
-
-.cv-tabs .v-tab--active {
-  background: var(--naranja);
-  border-color: var(--naranja);
-  color: #fff;
-}
-
-.cv-tabs .v-tab--active .v-icon {
-  color: #fff;
-}
-
-/* Responsivo: tabs verticales en móviles */
-@media (max-width: 550px) {
-  .cv-tabs .v-tab {
-    margin: 4px 0;
-    min-width: 100%;
-    justify-content: center!
-  }
-  .cv-tabs .v-tab .v-icon {
-    margin-right: 8px;
-  }
-  .cv-tabs .v-tab__content {
-    justify-content: center!
-  }
-}
-
-/* Responsivo mejorado para sección about */
-.cv-section-dark .cv-about-text {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* Zoom y lightbox para imágenes de portafolio */
-.cv-work-img {
-  filter: grayscale(100%) contrast(1.04);
-  transition: filter .3s ease;
-  cursor: zoom-in;
-  user-select: none;
-}
-
-.cv-work-img.zoom-enabled {
-  transition: transform .3s ease, filter .3s ease;
-}
-
-.cv-work-img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.05);
-}
-
-.cv-work-img.zoomed {
-  filter: grayscale(0%);
-  transform: scale(1.2);
-}
-
-/* Modal/lightbox para vista ampliada */
-.cv-lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 1000;
+  min-height: 92vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  color: #fff;
 }
 
-.cv-lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-.cv-lightbox .cv-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cv-lightbox .cv-close:hover {
-  background: rgba(255,50,50,0.3);
-}
-
-/* Responsivo: zoom desactivado en móviles para mejor performance */
-@media (max-width: 600px) {
-  .cv-work-img:hover {
-    transform: none;
-  }
-  .cv-work-img.zoomed {
-    transform: none;
-  }
-}
-
-/* Animación fade para lightbox */
-.cv-lightbox-enter-active,
-.cv-lightbox-leave-active {
-  transition: opacity .3s ease;
-}
-.cv-lightbox-enter,
-.cv-lightbox-leave-to {
-  opacity: 0;
-}
-
-/* Responsivo: zoom desactivado en móviles para mejor performance */
-@media (max-width: 600px) {
-  .cv-work-img:hover {
-    transform: none;
-  }
-  .cv-work-img.zoomed {
-    transform: none;
-  }
-  .cv-lightbox .cv-close {
-    display: none;
-  }
-}
-
-/* Tarjetas más compactas en móvil */
-@media (max-width: 600px) {
-  .cv-work-card {
-    margin-bottom: 20px;
-  }
-  .cv-work-body h4 {
-    font-size: .9rem;
-  }
-  .cv-work-leng {
-    font-size: .7rem;
-  }
-}
-
-/* Mejorar contraste en sección dark */
-.cv-section-dark .cv-section-title {
-  color: #fff;
-}
-
-.cv-section-dark .cv-section-desc {
-  color: #b9b9bd;
-}
-
-/* Ajustes para el canvas del hero */
 .cv-hero-canvas {
   position: absolute;
   top: 0;
@@ -633,7 +395,8 @@ module.exports = {
   pointer-events: none;
 }
 
-/* Ajustes para el tag del hero */
+.cv-hero-content { position: relative; z-index: 2; padding-top: 48px; padding-bottom: 48px; }
+
 .cv-hero-tag {
   display: inline-flex;
   align-items: center;
@@ -653,18 +416,165 @@ module.exports = {
   width: 22px; height: 2px; background: var(--naranja); display: inline-block;
 }
 
-/* Ajustes de los botones */
-.cv-btn-accent {
-  border-radius: 6px;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: .3px;
+.cv-hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.04;
+  margin-bottom: 24px;
 }
 
-.cv-btn-outline {
-  border-radius: 6px;
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: .3px;
+.cv-hero-title .accent--text { color: var(--naranja) !important; }
+
+.cv-hero-sub {
+  max-width: 560px;
+  color: #c7c7cc;
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 32px;
 }
+
+.cv-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.cv-hero-photo-col { text-align: center; }
+
+.cv-hero-photo {
+  position: relative;
+  display: inline-block;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+/* Secciones */
+.cv-section { padding: 96px 0; }
+
+.cv-section-gray { background: #f8f9fa; }
+
+.cv-section-dark { background: #121315; color: #fff; }
+
+.cv-section-label {
+  color: var(--naranja);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.cv-section-title { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; }
+
+.cv-section-line {
+  width: 56px; height: 3px; background: var(--naranja);
+  margin-top: 18px;
+}
+
+.cv-section-desc { margin-top: 18px; font-weight: 300; line-height: 1.7; color: #5a5a5e; }
+
+.cv-section-dark .cv-section-desc { color: #b9b9bd; }
+
+/* Tarjetas de trabajo */
+.cv-work-card {
+  background: #121315;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.cv-work-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--naranja);
+}
+
+.cv-work-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter .3s ease;
+}
+
+.cv-work-card:hover .cv-work-img {
+  filter: grayscale(0%);
+}
+
+/* Contenido de la tarjeta */
+.cv-work-body { padding: 18px 18px 20px; }
+
+.cv-work-body h4 {
+  color: #fff;
+  font-size: .98rem;
+  margin-bottom: 4px;
+}
+
+.cv-work-body h4 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.cv-work-leng {
+  color: #9c9ca2;
+  font-size: .8rem;
+  margin: 6px 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tarjetas de aplicaciones */
+.app-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 12px;
+  background: #333;
+}
+
+.app-title {
+  color: #fff;
+  font-size: .9rem;
+  text-align: center;
+}
+
+.app-desc {
+  color: #cfcfd3;
+  font-size: .8rem;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Tabs */
+.cv-tabs .v-tab {
+  text-transform: none;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .4px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 6px;
+  margin: 0 4px 4px 0;
+  color: #5a5a5e;
+  min-width: 100px;
+  padding: 8px 16px;
+}
+
+.cv-tabs .v-tab--active {
+  background: var(--naranja);
+  border-color: var(--naranja);
+  color: #fff;
+}
+
+.cv-tabs .v-tab--active .v-icon {
+  color: #fff;
+}
+
+/* About section dark */
+.cv-section-dark .cv-section-title { color: #fff; }
+
+.cv-about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3c3c40;
+  margin-bottom: 18px;
+}
+
+.cv-about-text strong { font-weight: 700; }
 </style>
