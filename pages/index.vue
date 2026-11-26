@@ -45,6 +45,9 @@
               <v-btn large elevation="0" dark color="accent" href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto" target="_blank" class="cv-btn-accent">
                 <v-icon left>mdi-whatsapp</v-icon> Conversemos
               </v-btn>
+              <v-btn large outlined dark color="white" @click="navegar('portafolio')" class="cv-btn-outline">
+                Portafolios <v-icon right small>mdi-gallery</v-icon>
+              </v-btn>
               <v-btn large outlined dark color="white" @click="navegar('trabajos')" class="cv-btn-outline">
                 Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
               </v-btn>
@@ -719,6 +722,7 @@ module.exports = {
       dpr: 1,
       listamenu: [
         { text: 'Inicio', icon: 'mdi-home', id: 'inicio' },
+        { text: 'Portafolio', icon: 'mdi-gallery', id: 'portafolio' },
         { text: 'Acerca de mí', icon: 'mdi-account-circle', id: 'acerca' },
         { text: 'Habilidades', icon: 'mdi-network', id: 'habilidades' },
         { text: 'Experiencia', icon: 'mdi-briefcase', id: 'experiencia' },

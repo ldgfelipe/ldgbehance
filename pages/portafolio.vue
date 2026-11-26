@@ -269,6 +269,10 @@ module.exports = {
     return {
       menuOpen: false,
       activeTab: 'sitios',
+      listamenu: [
+        { text: 'CV', icon: 'mdi-account', id: 'cv' },
+        { text: 'Portafolio', icon: 'mdi-gallery', id: 'portafolio' },
+      ],
       // Datos para Sitios Web
       sitiosDestacados: [
         {
