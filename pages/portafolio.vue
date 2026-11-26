@@ -42,8 +42,11 @@
               <v-btn large elevation="0" dark color="accent" href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto" target="_blank" class="cv-btn-accent">
                 <v-icon left>mdi-whatsapp</v-icon> Conversemos
               </v-btn>
-              <v-btn large outlined dark color="white" @click="$router.push('/')" class="cv-btn-outline">
+              <v-btn large outlined dark color="white" @click="$router.push('/portafolio')" class="cv-btn-outline">
                 Inicio <v-icon right small>mdi-home</v-icon>
+              </v-btn>
+              <v-btn large outlined dark color="white" @click="scrollARecursos" class="cv-btn-outline">
+                Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
               </v-btn>
             </div>
           </v-col>
