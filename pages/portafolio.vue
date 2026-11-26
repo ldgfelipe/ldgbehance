@@ -23,12 +23,12 @@
       </v-card>
     </v-dialog>
 
-    <!-- HERO SECTION -->
+    <!-- HERO CON BOTÓN PARA VOLVER INICIO -->
     <section id="inicio" class="cv-hero">
       <canvas ref="dncanvas" class="cv-hero-canvas"></canvas>
       <v-container class="cv-hero-content">
         <v-row align="center" class="fill-height">
-          <v-col cols="12" sm="12" md="7">
+          <v-col cols="12" md="7">
             <div class="cv-hero-tag">
               <span></span> Portafolio de Diseño
             </div>
@@ -42,14 +42,14 @@
               <v-btn large elevation="0" dark color="accent" href="https://wa.me/2227328662?text=Quisiera hablar sobre un proyecto" target="_blank" class="cv-btn-accent">
                 <v-icon left>mdi-whatsapp</v-icon> Conversemos
               </v-btn>
-              <v-btn large outlined dark color="white" @click="scrollARecursos" class="cv-btn-outline">
-                Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
+              <v-btn large outlined dark color="white" @click="$router.push('/')" class="cv-btn-outline">
+                Inicio <v-icon right small>mdi-home</v-icon>
               </v-btn>
             </div>
           </v-col>
 
           <!-- Foto pequeña a la derecha superior, 250px -->
-          <v-col cols="12" sm="12" md="5" class="cv-hero-photo-col">
+          <v-col cols="12" md="5" class="cv-hero-photo-col">
             <div class="cv-hero-photo">
               <v-img src="./img/ldgfelipefoto.png" class="cv-photo-img" alt="Felipe Carrera"></v-img>
             </div>
@@ -58,13 +58,13 @@
       </v-container>
     </section>
 
-    <!-- SECCIÓN DE PORTAFOLIO -->
+    <!-- SECCIÓN PRINCIPAL DE PORTAFOLIO -->
     <section id="recursos" class="cv-section cv-section-gray">
       <v-container>
         <v-row>
           <v-col cols="12">
             <div class="cv-section-label">Navegación de Secciones</div>
-            <h2 class="cv-section-title">Explora mis trabajos</h2>
+            <h2 class="cv-section-title">Explora mis trabajos</div>
             <div class="cv-section-line"></div>
           </v-col>
         </v-row>
@@ -77,7 +77,7 @@
                 <v-icon>mdi-web</v-icon> Sitios Web
               </v-tab>
               <v-tab>
-                <v-icon>mdi-palette</v-icon> Branding
+                <v-icon>mdi-palette</v-icon> Branding e Identidad
               </v-tab>
               <v-tab>
                 <v-icon>mdi-image</v-icon> Diseño Gráfico
@@ -89,9 +89,9 @@
           </v-col>
         </v-row>
 
-        <!-- Contenedor de tarjetas por categoría -->
+        <!-- CONTENIDO POR CATEGORÍA -->
         <v-row class="mt-20" v-if="activeTab === 'sitios'">
-          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in sitiosDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/paginas/${item.img}`"
@@ -128,7 +128,7 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'branding'">
-          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in brandingDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/certificado/certificados${index + 1}.jpg`"
@@ -165,7 +165,7 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'disenio'">
-          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in disenoDestacado" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-work-card">
               <v-img
                 :src="`./img/galeria/img${index + 1}.jpg`"
@@ -202,7 +202,7 @@
         </v-row>
 
         <v-row class="mt-20" v-else-if="activeTab === 'apps'">
-          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in appsDestacados" :key="index" class="d-flex child-flex">
+          <v-col cols="12" sm="12" md="6" lg="4" v-for="(item, index) in proyectosDestacados" :key="index" class="d-flex child-flex">
             <v-card color="primary" dark outlined class="cv-app-card">
               <v-img
                 :src="`./img/icon/${item.img}`"
@@ -269,12 +269,14 @@ module.exports = {
     return {
       menuOpen: false,
       activeTab: 'sitios',
+      // Menú lateral del portafolio
       listamenu: [
         { text: 'CV', icon: 'mdi-account', id: 'cv' },
         { text: 'Portafolio', icon: 'mdi-gallery', id: 'portafolio' },
       ],
-      // Datos para Sitios Web
-      sitiosDestacados: [
+      // Proyectos destacados - todos los proyectos en un solo lugar
+      proyectosDestacados: [
+        // Sitios Web
         {
           titulo: 'Planeta Preescolar',
           img: 'Planeta preescolar.png',
@@ -302,10 +304,8 @@ module.exports = {
           leng: 'vuejs firebase',
           enlace: 'https://kumonsistem.web.app/',
           descripcion: 'Sistema de gestión educativa para centros Kumon con base en Firebase.'
-        }
-      ],
-      // Datos para Branding
-      brandingDestacados: [
+        },
+        // Branding e Identidad
         {
           titulo: 'Identidad Visual - Obsoletos',
           img: 'Obsoletos.png',
@@ -319,10 +319,8 @@ module.exports = {
           leng: 'wordpress y VUEJS',
           enlace: 'http://mind-publicidad.com/',
           descripcion: 'Portal de noticias y portfolio para agencia de publicidad con CMS WordPress.'
-        }
-      ],
-      // Datos para Diseño Gráfico
-      disenoDestacado: [
+        },
+        // Diseño Gráfico
         {
           titulo: 'Diseño de Logo - Kaab Arte',
           img: 'kaab-arte.png',
@@ -337,23 +335,21 @@ module.exports = {
           enlace: 'https://facilweb.com.mx',
           descripcion: 'Diseño de maquetación y layout para portal de noticias y revistas.'
         }
-      ],
-      // Datos para Aplicaciones
-      appsDestacados: [
-        {
-          titulo: 'APK Obsoletos',
-          img: 'obsoletos.png',
-          leng: 'PHP y VUEJS',
-          enlace: 'https://example.com/obsoletos',
-          descripcion: 'Aplicación móvil de catálogo de obsoletos y tecnología.'
-        },
-        {
-          titulo: 'APK Apps Schools',
-          img: 'vuejs.png',
-          leng: 'Vuejs',
-          enlace: 'https://example.com/appschools',
-          descripcion: 'Aplicación educativa para gestión escolar y comunicados.'
-        }
+        // Aplicaciones (comentadas por ahora - se pueden agregar después)
+        // {
+        //   titulo: 'APK Obsoletos',
+        //   img: 'obsoletos.png',
+        //   leng: 'PHP y VUEJS',
+        //   enlace: 'https://example.com/obsoletos',
+        //   descripcion: 'Aplicación móvil de catálogo de obsoletos y tecnología.'
+        // },
+        // {
+        //   titulo: 'APK Apps Schools',
+        //   img: 'vuejs.png',
+        //   leng: 'Vuejs',
+        //   enlace: 'https://example.com/appschools',
+        //   descripcion: 'Aplicación educativa para gestión escolar y comunicados.'
+        // }
       ]
     };
   },
