@@ -187,6 +187,10 @@ module.exports = {
         this.$router.push('/portafolio');
         return;
       }
+      if (id === 'contacto') {
+        this.$router.push('/contacto');
+        return;
+      }
       var el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     },
