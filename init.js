@@ -1,7 +1,8 @@
 const routes=[
-    {path:"/",component:httpVueLoader('./pages/index.vue?v=8')},
-    {path:"/portafolio",component:httpVueLoader('./pages/portafolio.vue?v=7')},
-    {path:"/quiensoy",component:httpVueLoader('./pages/quiensoy.vue')},
+    {path:"/",component:httpVueLoader('./pages/index.vue?v=9')},
+    {path:"/portafolio",component:httpVueLoader('./pages/portafolio.vue?v=8')},
+    {path:"/cv",component:httpVueLoader('./pages/cv.vue?v=1')},
+    {path:"/quiensoy",redirect:"/cv"},
     {path:"/avisodeprivacidad",component:httpVueLoader('./pages/avisodeprivacidad.vue')},
 ]
 const router=new VueRouter({

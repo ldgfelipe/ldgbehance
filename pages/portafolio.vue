@@ -211,6 +211,27 @@
         </v-row>
       </v-container>
     </section>
+
+    <!-- CTA: ¿Te gustó un proyecto parecido? -->
+    <section class="cv-section">
+      <v-container>
+        <v-row align="center">
+          <v-col cols="12" md="7">
+            <div class="cv-section-label">¿Te gustó un proyecto parecido?</div>
+            <h2 class="cv-section-title" style="color:#111;">Hablemos de tu proyecto</h2>
+            <p class="cv-section-desc" style="color:#5a5a5e;">
+              Cuéntame qué necesitas en el formulario del inicio y agendamos
+              una llamada de diagnóstico de 30 minutos, sin costo.
+            </p>
+          </v-col>
+          <v-col cols="12" md="5" class="text-md-right">
+            <v-btn large elevation="0" color="accent" dark @click="navegar('inicio')" class="cv-btn-accent">
+              <v-icon left>mdi-calendar-check</v-icon> Agenda una llamada
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </v-main>
 </template>
 
@@ -284,7 +305,7 @@ module.exports = {
     },
     navegar(id) {
       if (id === 'cv') {
-        this.$router.push('/');
+        this.$router.push('/cv');
         return;
       }
       this.$router.push('/');
