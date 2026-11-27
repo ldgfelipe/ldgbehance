@@ -48,9 +48,6 @@
               <v-btn large outlined dark color="white" @click="navegar('portafolio')" class="cv-btn-outline">
                 Portafolios <v-icon right small>mdi-gallery</v-icon>
               </v-btn>
-              <v-btn large outlined dark color="white" @click="navegar('trabajos')" class="cv-btn-outline">
-                Ver proyectos <v-icon right small>mdi-arrow-down</v-icon>
-              </v-btn>
             </div>
 
             <v-row class="cv-metrics mt-10">
@@ -231,161 +228,13 @@
       </v-container>
     </section>
 
-    <!-- TRABAJOS -->
-    <section id="trabajos" class="cv-section cv-section-dark">
-      <v-container>
-        <v-row class="mb-6">
-          <v-col cols="12" md="5">
-            <div class="cv-section-label">05 - proyectos</div>
-            <h2 class="cv-section-title">Trabajos destacados</h2>
-            <p class="cv-section-subtitle">Desarrollo Web & IA | Optimización de Tiempos</p>
-            <div class="cv-section-line"></div>
-            <p class="cv-section-desc">
-              Mi portafolio exhibe una selección de proyectos diseñados y desenvolvidos con Vue.js, abarcando soluciones web corporativas, aplicaciones interactivas y trabajos de diseño gráfico. Cada proyecto demuestra mi compromiso con la calidad, la innovación y la resolución de problemas reales para negocios en Latinoamérica. Estoy disponible para nuevas colaboraciones y con gusto compartiré más detalles sobre cómo mi experiencia puede contribuir al éxito de tu próximo proyecto.
-            </p>
-          </v-col>
-          <v-col cols="12" md="7">
-            <v-tabs center-active class="cv-tabs">
-              <v-tab v-for="(tab, i) in tabs" :key="i" class="cv-tab">
-                <v-icon left small v-text="tab.icon"></v-icon>{{ tab.label }}
-              </v-tab>
-
-              <!-- Sitios Web -->
-              <v-tab-item>
-                <v-row>
-                  <v-col cols="12" md="6" v-for="(site, idx) in sitiosActivos" :key="'ws-' + idx" class="cv-works-col">
-                    <div class="cv-work-card">
-                      <v-img
-                        :src="'./img/paginas/' + site.img"
-                        height="170"
-                        class="cv-work-img"
-                        @error="replaceWithErrorImage"
-                      ></v-img>
-                      <div class="cv-work-body">
-                        <h4>{{ site.sitio }}</h4>
-                        <div class="cv-work-leng" v-html="site.leng"></div>
-                        <v-btn small outlined color="accent" :href="site.enlace" target="_blank" class="cv-work-btn">
-                          Visitar sitio <v-icon right x-small>mdi-open-in-new</v-icon>
-                        </v-btn>
-                      </div>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-tab-item>
-
-              <!-- Diseño -->
-              <v-tab-item>
-                <v-carousel cycle height="430" hide-delimiter-background show-arrows-on-hover class="cv-carousel">
-                  <v-carousel-item v-for="n in 29" :key="'pub-' + n">
-                    <v-img :src="`./img/galeria/diseño/img${n}.jpg`" contain height="100%" class="rounded"></v-img>
-                  </v-carousel-item>
-                </v-carousel>
-              </v-tab-item>
-
-              <!-- Apps -->
-              <v-tab-item>
-                <v-row>
-                  <v-col cols="12" md="4" v-for="(app, idx) in apps" :key="'app-' + idx" class="cv-works-col">
-                    <div class="cv-work-card cv-app-card">
-                      <v-img :src="app.img" contain max-height="90"></v-img>
-                      <h4>{{ app.name }}</h4>
-                      <v-btn small outlined color="accent" :href="app.link" target="_blank" class="cv-work-btn">
-                        <v-icon left x-small>mdi-download</v-icon> Descargar APK
-                      </v-btn>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-tab-item>
-
-              <!-- Vídeos -->
-              <v-tab-item>
-                <v-row>
-                  <v-col cols="12" md="6" lg="4" v-for="(vid, idx) in videos" :key="'vid-' + idx" class="cv-works-col">
-                    <div class="cv-video-card" @click="abrevideo(vid)">
-                      <div class="cv-video-thumb">
-                        <v-icon large class="accent--text">mdi-youtube</v-icon>
-                      </div>
-                      <h4>{{ vid.name }}</h4>
-                    </div>
-                  </v-col>
-                </v-row>
-                <v-dialog v-model="visorvid" max-width="760">
-                  <v-card>
-                    <v-card-title class="cv-dialog-title">
-                      {{ vidView.name }} <v-spacer></v-spacer>
-                      <v-btn icon color="accent" @click="visorvid = false"><v-icon>mdi-close</v-icon></v-btn>
-                    </v-card-title>
-                    <v-card-text>
-                      <iframe
-                        width="100%" height="420"
-                        :src="'https://www.youtube.com/embed/' + vidView.url"
-                        frameborder="0" allowfullscreen
-                        referrerpolicy="strict-origin-when-cross-origin"
-                      ></iframe>
-                    </v-card-text>
-                  </v-card>
-                </v-dialog>
-              </v-tab-item>
-
-              <!-- 3D -->
-              <v-tab-item>
-                <v-row>
-                  <v-col cols="12" md="6" lg="4" v-for="(model, idx) in modelos3d" :key="'3d-' + idx" class="cv-works-col">
-                    <div class="cv-work-card">
-                      <v-img :src="model.img" height="150" class="cv-work-img"></v-img>
-                      <div class="cv-work-body">
-                        <h4>{{ model.name }}</h4>
-                        <v-btn small outlined color="accent" @click="abremodelo(model)" class="cv-work-btn">
-                          Ver modelo 3D
-                        </v-btn>
-                      </div>
-                    </div>
-                  </v-col>
-                </v-row>
-                <v-dialog v-model="visor3d" width="1120px" max-width="94vw">
-                  <v-card>
-                    <v-card-title class="cv-dialog-title">
-                      {{ v3d.name }} <v-spacer></v-spacer>
-                      <v-btn icon color="accent" @click="visor3d = false"><v-icon>mdi-close</v-icon></v-btn>
-                    </v-card-title>
-                    <v-card-text>
-                      <div v-html="v3d.url"></div>
-                    </v-card-text>
-                  </v-card>
-                </v-dialog>
-              </v-tab-item>
-
-              <!-- Certificados -->
-              <v-tab-item>
-                <v-carousel cycle height="430" hide-delimiter-background show-arrows-on-hover class="cv-carousel">
-                  <v-carousel-item v-for="n in 12" :key="'cert-' + n">
-                    <v-img :src="`./img/certificado/certificados${n}.jpg`" contain height="100%" class="rounded"></v-img>
-                  </v-carousel-item>
-                </v-carousel>
-              </v-tab-item>
-
-              <!-- Impresos -->
-              <v-tab-item>
-                <v-row>
-                  <v-col cols="6" sm="4" md="3" v-for="(n, idx) in impresos" :key="'imp-' + n" class="cv-works-col">
-                    <div class="cv-print-card">
-                      <v-img :src="`./img/galeria/diseño/img${n}.jpg`" height="170" contain class="rounded"></v-img>
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-tab-item>
-            </v-tabs>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="cv-section">
       <v-container>
         <v-row align="center">
           <v-col cols="12" md="7">
-            <div class="cv-section-label">06 — Contacto</div>
+            <div class="cv-section-label">05 — Contacto</div>
             <h2 class="cv-section-title">¿Hablamos de tu próximo proyecto?</h2>
             <p class="cv-section-desc">
               Agenda una reunión y diseñemos juntos la solución digital perfecta
@@ -608,68 +457,6 @@ a { text-decoration: none; color: inherit; }
 .cv-cedula { margin-top: 22px; }
 .cv-cedula .v-icon { margin-right: 6px; }
 
-/* ---------- Trabajos ---------- */
-.cv-tabs >>> .v-slide-group__content { justify-content: flex-start; flex-wrap: wrap; }
-.cv-tabs >>> .v-tab {
-  text-transform: none;
-  font-weight: 600;
-  font-size: .82rem;
-  letter-spacing: .4px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 6px;
-  margin: 0 8px 8px 0;
-  color: #cfcfd3;
-}
-.cv-tabs >>> .v-tab--active {
-  background: var(--naranja);
-  border-color: var(--naranja);
-  color: #fff;
-}
-.cv-tabs >>> .v-tab--active .v-icon { color: #fff; }
-.cv-works-col { padding-bottom: 20px; }
-.cv-work-card {
-  background: #121315;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
-  overflow: hidden;
-  height: 100%;
-  transition: transform .25s ease, border-color .25s ease;
-}
-.cv-work-card:hover { transform: translateY(-4px); border-color: var(--naranja); }
-.cv-work-img { filter: grayscale(100%) contrast(1.04); transition: filter .3s ease; }
-.cv-work-card:hover .cv-work-img { filter: grayscale(0%); }
-.cv-work-body { padding: 18px 18px 20px; }
-.cv-work-body h4 { color: #fff; font-size: .98rem; }
-.cv-work-leng { color: #9c9ca2; font-size: .8rem; margin: 6px 0 14px; }
-.cv-work-btn { border-radius: 5px; font-weight: 600; text-transform: none; font-size: .78rem; }
-.cv-app-card { padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
-.cv-app-card h4 { color: #fff; }
-.cv-video-card {
-  background: #121315;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
-  padding: 24px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform .25s ease, border-color .25s ease;
-  height: 100%;
-}
-.cv-video-card:hover { transform: translateY(-4px); border-color: var(--naranja); }
-.cv-video-thumb { margin-bottom: 12px; font-size: 3rem; line-height: 1; }
-.cv-video-card h4 { color: #fff; font-size: .95rem; }
-.cv-carousel { border-radius: 8px; overflow: hidden; }
-.cv-print-card {
-  background: #121315;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform .25s ease, border-color .25s ease;
-}
-.cv-print-card:hover { transform: translateY(-4px); border-color: var(--naranja); }
-.cv-print-card .v-image { filter: grayscale(100%) contrast(1.04); transition: filter .3s ease; }
-.cv-print-card:hover .v-image { filter: grayscale(0%); }
-.cv-dialog-title { font-family: 'Inter', sans-serif; font-weight: 700; }
 
 /* ---------- Contacto ---------- */
 .cv-btn-big { padding: 0 32px; }
@@ -723,10 +510,6 @@ module.exports = {
     return {
       anuncio: true,
       show: false,
-      visor3d: false,
-      v3d: {},
-      visorvid: false,
-      vidView: {},
       dnCtx: null,
       dnWidth: 0,
       dnHeight: 0,
@@ -741,7 +524,6 @@ module.exports = {
         { text: 'Habilidades', icon: 'mdi-network', id: 'habilidades' },
         { text: 'Experiencia', icon: 'mdi-briefcase', id: 'experiencia' },
         { text: 'Educación', icon: 'mdi-school', id: 'educacion' },
-        { text: 'Trabajos', icon: 'mdi-book-open', id: 'trabajos' },
         { text: 'Contacto', icon: 'mdi-email', id: 'contacto' },
       ],
       skills: [
@@ -761,37 +543,6 @@ module.exports = {
         'PHP', 'Laravel', 'CodeIgniter', 'Vue.js', 'React', 'Node.js',
         'MySQL', 'MongoDB', 'Firebase', 'AWS', 'WordPress', 'jQuery',
       ],
-      tabs: [
-        { label: 'Web', icon: 'mdi-web' },
-        { label: 'Diseño', icon: 'mdi-camera-image' },
-        { label: 'Apps', icon: 'mdi-application' },
-        { label: 'Vídeos', icon: 'mdi-youtube' },
-        { label: '3D', icon: 'mdi-video-3d' },
-        { label: 'Certificados', icon: 'mdi-certificate' },
-        { label: 'Impresos', icon: 'mdi-printer' },
-      ],
-videos: [
-        { url: "Ez6LalbP3v0", name: "Chimeneas Puebla: Promoción Buen fin 2025" },
-        { url: "14EcCG7Q0lc", name: "Kumon: Las Matemáticas ayuda a tomar mejores decisiones" }
-      ],
-      apps: [
-        { name: "Obsoletos", img: "./img/icon/obsoletos.png", link: "./download/obsoletos.apk" },
-        { name: "AppSchools", img: "./img/icon/vuejs.png", link: "./download/appschools.apk" },
-        { name: "Intersom", img: "./img/icon/intersom.jpeg", link: "./download/intersom.apk" },
-      ],
-      impresos: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],
-      modelos3d: [
-        { name: 'Deshidratador Solar V0.01', img: 'img/galeria/3d/desh2.png',
-          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/60735ee6-5388-45df-a0b3-0a1e18d5a9cf?token=II39JzVUGL0=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>' },
-        { name: 'Deshidratador Solar V0.2', img: 'img/galeria/3d/desh1.png',
-          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/9e4a2179-c982-42ab-8dfe-22eb1bc56d8a?token=ZXkXQ7FbJO8=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>' },
-        { name: 'Kaskarita v0.1', img: 'img/galeria/3d/kaskarita1.png',
-          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/2ee86659-f571-4c8c-80d7-ec21ee1b5108?token=o6Q3TouIBnM=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>' },
-        { name: 'Luminaria Solar Optima24', img: 'img/galeria/3d/lum1.png',
-          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/fcfdd774-002a-44d4-9689-93b3f7106be2?token=h16NOCk6TFA=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>' },
-        { name: 'Luminaria Solar Urban', img: 'img/galeria/3d/lum2.png',
-          url: '<iframe src="https://3dwarehouse.sketchup.com/embed/9e8c2cb9-7473-4fef-acd3-fc9ea940e8b3?token=q0sFXKLL31s=&binaryName=s21" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="width:100%; max-width:100%; height:100%; max-height:800px; min-height:500px;" allowfullscreen></iframe>' },
-      ],
       experiencia: [
         { empresa: "Pavific / We Love Paving", periodo: "Ene 2026 – Sep 2026",
           descripcion: "Diseño web WordPress, desarrollo de plugin, integración de IA, manejo de tracking y estrategia. Desarrollo de aplicaciones para marketing digital de la empresa." },
@@ -808,24 +559,9 @@ videos: [
         { empresa: "Agua Inmaculada", periodo: "Ene 2008 – Ene 2014",
           descripcion: "Jefe de Diseño y Sistemas: gestión de marca, desarrollo de sistemas internos y soporte TI." },
       ],
-      sitiosar: [
-        { sitio: "Planeta preescolar", enlace: "https://planetapreescolar.com", img: "Planeta preescolar.png", leng: "VUEJS", active: true },
-        { sitio: "ASLife Seguros", enlace: "https://aslife.web.app/", img: "aslife.png", leng: "VUEJS", active: true },
-        { sitio: "Vanderbilt", enlace: "https://vanderbilt.edu.mx", img: "Vanderbilt.png", leng: "wordpress", active: true },
-        { sitio: "Sistema Administración Kumon", enlace: "https://kumonsistem.web.app/", img: "Sistema Arministración Kumon.png", leng: "vuejs firebase -en desarrollo-", active: true },
-        { sitio: "profetit", enlace: "https://profetit.org", img: "profetit.png", leng: "php laravel", active: true },
-        { sitio: "Distribuidora Santa Fe", enlace: "https://santafedistribuidora.com", img: "Distribuidora Santa Fe.png", leng: "wordpress", active: true },
-        { sitio: "easythinx", enlace: "https://easythinx.com", img: "easythinx.png", leng: "Laravel y Vuejs", active: true },
-        { sitio: "comunidad MediWork", enlace: "https://comunidadmediwork.com.mx", img: "comunidad mediwork.png", leng: "WordPress + directorio médico e IA", active: true },
-        { sitio: "Luminarias Solares", enlace: "https://luminarias.saecsa.com", img: "luminarias-solares.png", leng: "WordPress - e-commerce solar", active: true },
-        { sitio: "Calentadores Solares", enlace: "https://saecsa.com/venta-de-calentadores-solares", img: "calentadores-solares.png", leng: "HTML, PHP, JS + MercadoPago", active: true },
-      ],
     };
   },
   computed: {
-    sitiosActivos() {
-      return this.sitiosar.filter(s => s.active === true);
-    },
     menuOpen: {
       get() { return this.menuaction === true; },
       set(v) { this.$emit('closemenu', v); },
@@ -842,19 +578,8 @@ videos: [
       if (el) el.scrollIntoView({ behavior: 'smooth' });
       this.$emit('closemenu', false);
     },
-    abrevideo(vid) {
-      this.vidView = vid;
-      this.visorvid = true;
-    },
-    abremodelo(m) {
-      this.v3d = m;
-      this.visor3d = true;
-    },
     closemenu(p) {
       this.$emit('closemenu', p);
-    },
-    replaceWithErrorImage(e) {
-      e.target.src = './img/icon/vuejs.png';
     },
     dnResize() {
       const canvas = this.$refs.dncanvas;
