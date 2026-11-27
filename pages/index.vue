@@ -48,6 +48,9 @@
               <v-btn large outlined dark color="white" @click="$router.push('/cv')" class="cv-btn-outline">
                 Ver CV <v-icon right small>mdi-account</v-icon>
               </v-btn>
+              <v-btn large outlined dark color="white" @click="$router.push('/portafolio')" class="cv-btn-outline">
+                Ver portafolio <v-icon right small>mdi-gallery</v-icon>
+              </v-btn>
             </div>
           </v-col>
 
@@ -59,48 +62,6 @@
         </v-row>
       </v-container>
     </section>
-
-    <!-- SECCIÓN DE CONTACTO -->
-    <section id="contacto" class="cv-section cv-section-dark">
-      <v-container>
-        <v-row align="center">
-          <v-col cols="12" md="7">
-            <div class="cv-section-label">05 — Contacto</div>
-            <h2 class="cv-section-title">Hablemos de tu próximo proyecto</h2>
-            <p class="cv-section-desc">
-              Agenda una reunión y diseñemos juntos la solución digital perfecta
-              para tu idea o empresa.
-            </p>
-          </v-col>
-          <v-col cols="12" md="5" class="text-md-right">
-            <v-btn large elevation="0" color="accent" dark href="https://wa.me/2227328662?text=Quisiera una cotización sobre un proyecto" target="_blank" class="cv-btn-accent cv-btn-big">
-              <v-icon left>mdi-whatsapp</v-icon> Contactar ahora
-            </v-btn>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
-
-    <!-- FORMULARIO SLAT XI -->
-    <section id="formulario" class="cv-section cv-section-gray">
-      <v-container>
-        <v-row>
-          <v-col cols="12">
-            <div class="cv-section-label">06 — Solicita Presupuesto</div>
-            <h2 class="cv-section-title">Presupuesto y Propuesta</h2>
-            <p class="cv-section-desc">
-              Completa el formulario abajo y te responderé en menos de 24 horas con
-              una propuesta personalizada para tu proyecto.
-            </p>
-          </v-col>
-        </v-row>
-      </v-container>
-      
-      <!-- Formulario Slat xI -->
-      <div id="slt-form-container">
-        <script src="https://slt-xi.vercel.app/slt-form.js" data-form-id="6e416375-3658-4b6c-a65c-846c0cc23bd1" async></script>
-      </div>
-    </section>
   </v-main>
 </template>
 
@@ -110,7 +71,6 @@ module.exports = {
     return {
       menuOpen: false,
       listamenu: [
-        { text: 'Inicio', icon: 'mdi-home', id: 'inicio' },
         { text: 'CV', icon: 'mdi-account', id: 'cv' },
         { text: 'Portafolio', icon: 'mdi-gallery', id: 'portafolio' },
         { text: 'Acerca de mí', icon: 'mdi-account-circle', id: 'acerca' },
@@ -132,6 +92,10 @@ module.exports = {
         this.$router.push('/portafolio');
         return;
       }
+      if (id === 'contacto') {
+        this.$router.push('/contacto');
+        return;
+      }
       var el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     },
@@ -142,7 +106,7 @@ module.exports = {
   },
   mounted() {
     this.menuOpen = false;
-  }
+  },
 };
 </script>
 
@@ -230,38 +194,8 @@ module.exports = {
 
 .cv-photo-img { filter: grayscale(100%) contrast(1.05); }
 
-/* Secciones */
-.cv-section { padding: 96px 0; }
-
-.cv-section-gray { background: #f8f9fa; }
-
-.cv-section-dark { background: #121315; color: #fff; }
-
-.cv-section-label {
-  color: var(--naranja);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.cv-section-title { font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; color: #fff; }
-
-.cv-section-subtitle { margin-top: 8px; font-size: .95rem; color: #b9b9bd; }
-
-.cv-section-line {
-  width: 56px; height: 3px; background: var(--naranja);
-  margin-top: 18px;
-}
-
-.cv-section-desc { margin-top: 18px; font-weight: 300; line-height: 1.7; color: #b9b9bd; }
-
-/* Hero actions */
-.cv-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
 /* Ajustes responsivos */
 @media (max-width: 960px) {
-  .cv-section { padding: 64px 0; }
+  .cv-hero { min-height: 80vh; }
 }
 </style>
